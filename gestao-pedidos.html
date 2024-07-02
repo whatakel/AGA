@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo tela Gestão de Pedidos</title>
+
+    <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="plataforma.css">
+</head>
+
+<body class="">
+    <nav class="header">
+
+    </nav>
+    <div class="barra-lateral">
+
+    </div>
+
+    <!-- integrar a partir daqui -->
+
+
+    <div class="main-container p-md-2 p-lg-3">
+        <div class="gestao-pedidos mb-2 box-border rounded col">
+            <div class="gestao-filtros p-2 ">
+                <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas"
+                    data-esconde="NAO">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Status">Status</label>
+                            <div class="input-group  input-status">
+                                <select name="pesquisa_0" id="pesquisa_0" tipo="buscar" combo="SIM"
+                                    where="vendas.garantia = &quot;[parametro]&quot;" tipopesquisa="Combo"
+                                    class="form-control" onkeydown="return enter_busca(this, event)">
+                                    <option value="" disabled hidden selected=""></option>
+                                    <option value="Confirmado">Confirmado</option>
+                                    <option value="Preparando">Preparando</option>
+                                    <option value="Faturando">Faturando</option>
+                                    <option value="Entregando">Entregando</option>
+                                    <option value="Entregue">Entregue</option>
+                                    <option value="Todos">Todos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group" style="margin-bottom: 4px !important;">
+                            <label for="Proposta">Proposta</label>
+                            <div class="input-group">
+                                <input value="" name="pesquisa_1" id="pesquisa_1" tipomascara="Texto"
+                                    tipo="buscar" where="vendas.codvenda = &quot;[parametro]&quot;"
+                                    tipopesquisa="Texto" class="form-control input-sm" type="text"
+                                    onkeydown="return enter_busca(this, event)">
+                                <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Cliente">Cliente</label>
+                            <div class="input-group">
+                                <input value="" name="pesquisa_2" id="pesquisa_2" tipomascara="Texto"
+                                    tipo="buscar"
+                                    where="clientes.cl_nome like &quot;%[parametro]%&quot; or clientes.cl_fantasia like &quot;%[parametro]%&quot;"
+                                    tipopesquisa="Texto" class="form-control input-sm" type="text"
+                                    onkeydown="return enter_busca(this, event)">
+                                <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Desde">Desde</label>
+                            <div class="input-group date datepicker" data-date-autoclose="true"
+                                data-date-format="dd-mm-yyyy">
+                                <input value="" name="pesquisa_3" id="pesquisa_3" tipomascara="Data"
+                                    tipo="buscar" where="vendas.datainclusao>= &quot;[parametro]&quot;"
+                                    tipopesquisa="Data" class="form-control input-sm" type="text" maxlength="10"
+                                    autocomplete="off" onkeydown="return enter_busca(this, event)">
+                                    <button class="input-gp-btn fas fa-calendar-alt"></button>                                        </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="Até">Até</label>
+                            <div class="input-group date datepicker" data-date-autoclose="true"
+                                data-date-format="dd-mm-yyyy">
+                                <input value="" name="pesquisa_4" id="pesquisa_4" tipomascara="Data"
+                                    tipo="buscar" where="vendas.datainclusao<= &quot;[parametro]&quot;"
+                                    tipopesquisa="Data" class="form-control input-sm" type="text" maxlength="10"
+                                    autocomplete="off" onkeydown="return enter_busca(this, event)">
+                                    <button class="input-gp-btn fas fa-calendar-alt"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-mostrar filtro-mostrar form-group dataTables_length" id="dataTable1_length">
+                        <label>Mostrar
+                            <select name="dataTable1_length" aria-controls="dataTable1"
+                                class="form-control input-sm">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                                <option value="500">500</option>
+                                <option value="1000">1000</option>
+                                <option value="-1">Todos</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ctn-pedidos column d-flex flex-row gap-2">
+            <div class="coluna-pedidos box-border rounded col-xl-3 col-sm-4">
+                <div class="titulo-pagina p-2 d-flex flex-wrap">
+                    <h5>Gestão Pedidos</h5>
+                    <button class="btn btn-sm  btn-success">+ Incluir</button>
+                </div>
+                <div class="lista-produtos">
+                    <div class="box-pedido p-2 pedido-active">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                            <i class="icone-status fa-solid fa-boxes-packing icone-status-separando" title="Separando">
+                            </i>
+                            
+                        </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                    <div class="box-pedido p-2">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                                <i class="icone-status fa-solid fa-cart-flatbed" title="Recebido"></i>                            </i>
+                        </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                    <div class="box-pedido p-2">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                                <i class="icone-status fa-solid fa-thumbs-up" title="Confirmado"></i>                            </i>
+                        </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                    <div class="box-pedido p-2">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                                <i class="icone-status fa-solid fa-cash-register" title="Faturando"></i>
+                            </i>
+                        </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                    <div class="box-pedido p-2">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                                <i class="icone-status fa-solid fa-truck" title="Entregando"></i>
+                        </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                    <div class="box-pedido p-2">
+                        <div class="box-pedido-1">
+                            <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
+                                class="logo-pedido">
+                                <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
+                            </div>
+                        <div class="pedido-numero-data d-flex flex-row gap-2 my-1">
+                            <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                            <span class="m-0 p-0">/</span>
+                            <p class="numero-pedido m-0">#00000</p>
+                        </div>
+                        <div class="box-pedido-2 column d-flex justify-content-between flex-wrap">
+                            <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
+                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
+                        </div>
+                    </div>
+                 
+                </div>
+            </div>
+            <div class="cnt-gestao-right d-flex flex-column col col-sm">
+                <div class="detalhes-pedido box-border rounded column col-12">
+                    <div class="titulo-pagina ctn-detalhes p-2 d-flex justify-content-between">
+                        <div class="group-detalhes-1 d-flex flex-column">
+                            <h6 class="px-2 m-0 d-flex">Pedido #000000</h6>
+                            <p class="data-pedido px-2 m-0">21/06/24</p>
+                            <!-- <div class="acoes-pedidos d-flex align-items-center gap-3">
+                                <div class="form-group">
+                                    <div class="input-group input-status">
+                                        <select class="step-pedido form-control input-sm">
+                                            <option value="" disabled hidden selected="">Status</option>
+                                            <option value="Confirmado">Recebido</option>
+                                            <option value="Preparando">Confirmado</option>
+                                            <option value="Faturando">Separando</option>
+                                            <option value="Entregando">Faturando</option>
+                                            <option value="Entregue">Entregando</option>
+                                            <option value="Todos">Finalizado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="acoes-pedidos d-flex align-items-center gap-3 col-4 d-flex justify-content-center">
+                            <div class="form-group">
+                                <div class="input-group input-status">
+                                    <select class="step-pedido form-control input-sm select-status">
+                                        <option value="" disabled hidden selected="">Status</option>
+                                        <option value="Confirmado">Recebido</option>
+                                        <option value="Preparando">Confirmado</option>
+                                        <option value="Faturando">Separando</option>
+                                        <option value="Entregando">Faturando</option>
+                                        <option value="Entregue">Entregando</option>
+                                        <option value="Todos">Finalizado</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="acoes-pedidos acoes-principais text-white col-auto d-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-print" title="Imprime separação"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-boxes-packing" title="Editar Quantidade"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            </button>
+                        </div> -->
+                        <div class="acoes-pedidos col-auto d-flex gap-3 align-items-center">
+                            <i class="fa-solid fa-sheet-plastic"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class="m-0 p-0">/</span>
+                            <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
+                                <i class="fa-solid fa-check-double"></i>
+                                <p class="m-0">Salvar</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ctn-pedido editar-pedido">
+                        <div class="info-cliente">
+                            <div class="container form-group form-venda">
+                                <div class="row mb-2">
+                                    <div class="col-2">
+                                        <label for="Venda">Venda</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-3">
+                                        <label for="Empresa">Empresa</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="Cliente">Cliente</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-2">
+                                        <label for="Status">Status</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container form-group form-observacao ">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <label for="obs-nf">Observações na NF do Solicitante</label>
+                                        <textarea type="text" class="form-control"></textarea>
+                                    </div>
+                                    <div class="col">
+                                        <label for="obs-dist">Observações Internas da Distribuidora</label>
+                                        <textarea type="text-area" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container d-flex p-0 mt-3">
+                            <div class="container col-4 col-xxl-3 form-group m-0 ">
+                                <div class="form-valor container d-flex justify-content-end row bg-success text-white">
+                                    <div class="col-12 p-0">
+                                        <label for="Venda">Forma de pagamento</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col p-0" style="padding-right:5px !important;">
+                                        <label for="Venda">Itens R$</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col p-0">
+                                        <label for="Venda">Total R$</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container p-0 col-8 col-xxl-9 form-group lista-produtos">
+                                <div class="ctn-lista-pedidos p-2 box-border">
+                                    <div>
+                                        <h4 class="mtitulo">Itens do Pedido</h4>
+                                    </div>
+                                    <div class="div_scroll">
+                                        <div id="listagem_itens_pedidos">
+                                            <div>
+                                                <tboby></tboby>
+                                                <table class="table table-striped tabela_produtos">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-6">Produto</th>
+                                                            <th class="col-2 tabela-produto">Quantidade</th>
+                                                            <th class="col-2 tabela-produto-valor">Valor</th>
+                                                            <th class="col-2 tabela-produto-subtotal">SubTotal</th>
+                                                            <th class="col"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tabela-produtos-edicao">
+                                                        <tr>
+                                                            <td class="td_produto">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td nowrap="" class="direita td_acoes td_acao_input">
+                                                                <input data-codigo="14937" id="input_produto_qt_14937" tipo="moeda" type="text" onkeyup="Calcula_Item(14937);" data-valor="29.9" value="20,00" class="input-tabela-pedido">
+                                                            </td>
+                                                            <td class="direita td_valor_unitario" data-codigo="14937">29,90</td>
+                                                            <td class="direita td_sub_total" data-codigo="14937">598,00
+                                                            </td>
+                                                            <td onclick="Retirar_Item(257);" nowrap=""
+                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_produto">MUSSARELA RETALHO - PADRÃO - SANTA
+                                                                ROSA</td>
+                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
+                                                                    data-codigo="14940" id="input_produto_qt_14940"
+                                                                    tipo="moeda" type="text"
+                                                                    onkeyup="Calcula_Item(14940);" data-valor="30.5"
+                                                                    value="10,00" class="input-tabela-pedido"></td>
+                                                            <td class="direita td_valor_unitario" data-codigo="14940">
+                                                                30,50</td>
+                                                            <td class="direita td_sub_total" data-codigo="14940">305,00
+                                                            </td>
+                                                            <td onclick="Retirar_Item(269);" nowrap=""
+                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_produto">QUEIJO COLONIAL MISTURA - RETALHO -
+                                                                VENEZA</td>
+                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
+                                                                    data-codigo="14939" id="input_produto_qt_14939"
+                                                                    tipo="moeda" type="text"
+                                                                    onkeyup="Calcula_Item(14939);" data-valor="29.9"
+                                                                    value="10,00" class="input-tabela-pedido"></td>
+                                                            <td class="direita td_valor_unitario" data-codigo="14939">
+                                                                29,90</td>
+                                                            <td class="direita td_sub_total" data-codigo="14939">299,00
+                                                            </td>
+                                                            <td onclick="Retirar_Item(265);" nowrap=""
+                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_produto">QUEIJO PARMESÃO - PEÇA - MINAS</td>
+                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
+                                                                    data-codigo="14941" id="input_produto_qt_14941"
+                                                                    tipo="moeda" type="text"
+                                                                    onkeyup="Calcula_Item(14941);" data-valor="42"
+                                                                    value="6,00" class="input-tabela-pedido"></td>
+                                                            <td class="direita td_valor_unitario" data-codigo="14941">
+                                                                42,00</td>
+                                                            <td class="direita td_sub_total" data-codigo="14941">252,00
+                                                            </td>
+                                                            <td onclick="Retirar_Item(270);" nowrap=""
+                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="td_produto">QUEIJO PARMESÃO - PEÇA - NATOBOM</td>
+                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
+                                                                    data-codigo="14938" id="input_produto_qt_14938"
+                                                                    tipo="moeda" type="text"
+                                                                    onkeyup="Calcula_Item(14938);" data-valor="42"
+                                                                    value="6,00" class="input-tabela-pedido"></td>
+                                                            <td class="direita td_valor_unitario" data-codigo="14938">
+                                                                42,00</td>
+                                                            <td class="direita td_sub_total" data-codigo="14938">252,00
+                                                            </td>
+                                                            <td onclick="Retirar_Item(260);" nowrap=""
+                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

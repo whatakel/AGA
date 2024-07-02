@@ -1,0 +1,241 @@
+:root{
+    --preto: #222D32;
+    --gray-background:#e8e8e8;
+    --border-container:1px solid #dddddd;
+    --azul:#0176B4;
+}
+
+/* classes genericas */
+.box-border{
+    border:var(--border-container);
+    border-radius:5px
+}
+
+body{
+    padding:50px 0 0 50px;
+    box-sizing: border-box;;
+    height:100vh;
+    width:100vw;
+    max-height:100vh;
+}
+.header{
+    position:absolute;
+    top:0;
+    left:0;
+    height:50px;
+    width: 100vw;
+    background:var(--preto);
+}
+.barra-lateral{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100vh;
+    width:50px;
+    background-color: var(--preto);
+}
+.main-container{
+    box-sizing: border-box;
+}
+
+.titulo-pagina{
+    display: flex;
+    align-items: center;;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--gray-background);
+}
+.titulo-pagina h5{
+    margin:0;
+}
+.barra-sessao{
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;   
+}
+.gestao-filtros{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+.row-gestao-filtros{
+    display: flex;
+    width: 100%;
+    margin: 0;
+}
+.row-gestao-filtros > *:not(:last-child){
+    padding:0 1rem 0 0;
+}
+.row-gestao-filtros .form-group input,
+.row-gestao-filtros .form-group select,
+.acoes-pedidos .form-group .step-pedido,
+.info-cliente input{
+    height:30px;
+    font-size:14px;
+    padding:0 5px 0 5px;
+    box-shadow: none;
+}
+.filtro-mostrar{
+    width: auto;
+}
+.filtro-mostrar select{
+    padding-right: 15px;
+    box-sizing: content-box;
+}
+.input-mostrar{
+    position:relative;
+}
+.input-mostrar:after{
+    content: "\f078";
+    position: relative;
+    right:10px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size:15px;
+    z-index: 9;
+    pointer-events: none;
+}
+
+.input-status{
+    position:relative;
+    width:calc(100% + 20px);
+}
+.select-status{
+    border:1px solid var(--azul);
+    color:var(--azul);
+}
+.input-status:after{
+    content: "\f078";
+    position: relative;
+    top:5px;
+    right:20px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size:15px;
+    z-index: 9;
+    pointer-events: none;
+}
+.input-gp-btn{
+    background:white;
+    border:var(--border-container);
+    border-radius:5px
+}
+.coluna-pedidos,
+.cnt-gestao-right{
+    height:calc(100vh - 50px - 32px);
+    overflow-y: scroll;
+}
+.cnt-gestao-right{
+    max-width: calc(75% - 8px);
+    overflow-y: scroll;
+    border-top: var(--border-container);
+    border-bottom: var(--border-container);
+    border-radius: 5px;
+}
+
+.cnt-gestao-right::-webkit-scrollbar {
+    display: none;
+  }
+.cnt-gestao-right {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+.box-pedido{
+    padding-bottom: 5px;
+    transition: .2s ease;
+    cursor: pointer;
+}
+.box-pedido:hover{
+    background:var(--gray-background);
+}
+.box-pedido:not(:last-child){
+    border-bottom:var(--border-container);
+}
+.pedido-active{
+    position: relative;
+}
+.pedido-active::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:5px;
+    background-color: var(--azul);
+}
+.box-pedido-1{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icone-status{
+    color:var(--azul)
+}
+.icone-status-separando{
+    
+}
+.loja-pedido,
+.loja-pedido-valor,
+.pedido-numero-data{
+    font-size:12px;
+    line-height: 14px;
+}
+.loja-pedido-valor{
+    background: #0176B4;
+    color:white;
+    padding:3px;
+    border-radius:3px;
+}
+.box-btn-expand{
+    text-align: end;
+}
+.detalhes-pedido{
+    flex:1
+}
+.detalhes-pedido h5{
+    margin-right:1rem;;
+}
+.detalhes-pedido .titulo-pagina{
+    justify-content: start;
+}
+.acoes-principais{
+    padding:5px 10px 5px 10px;
+    border-radius:5px;
+    background:var(--preto)
+}
+.acoes-pedidos span{
+    cursor:default ;
+}
+.acoes-pedidos i{
+    cursor: pointer;
+    font-size:20px;
+}
+
+.btn-salvar i{
+    font-size:13px
+}
+.form-observacao input{
+    line-height: 5rem;
+}
+.form-observacao textarea{
+        resize: none;
+}
+.form-valor{
+    padding:1rem !important;
+    background-color: tomato;
+    border-radius:5px;
+    margin: 0;
+}
+.ctn-lista-pedidos{
+    width:calc(100% - 10px)
+}
+.input-tabela-pedido{
+    max-width:75px
+}
+.tabela-produtos-edicao tr{
+    background:tomato !important;
+    
+    font-size:14px;
+}
