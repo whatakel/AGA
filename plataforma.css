@@ -163,10 +163,13 @@ body{
     width:5px;
     background-color: var(--azul);
 }
-.box-pedido-1{
+.box-pedido-status{
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+.data-pedido{
+    font-size:12px;
 }
 .icone-status{
     color:var(--azul)
