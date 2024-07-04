@@ -114,9 +114,9 @@
             </div>
         </div>
         <div class="ctn-pedidos column d-flex flex-row gap-2">
-            <div class="coluna-pedidos box-border rounded col-xl-3 col-sm-4">
+            <div class="coluna-pedidos box-border rounded col-3">
                 <div class="titulo-pagina p-2 d-flex flex-wrap">
-                    <h5>Gestão Pedidos</h5>
+                    <h5>Pedidos</h5>
                     <button class="btn btn-sm  btn-success">+ Incluir</button>
                 </div>
                 <div class="lista-produtos">
@@ -207,15 +207,15 @@
                  
                 </div>
             </div>
-            <div class="cnt-gestao-right d-flex flex-column col-xl-9 col-sm-8">
+            <div class="cnt-gestao-right d-flex flex-column col-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
                     <div class="titulo-pagina ctn-detalhes p-2 d-flex justify-content-between">
                         <div class="group-detalhes-1 d-flex flex-column">
-                            <h6 class="px-2 m-0 d-flex">Pedido #000000</h6>
-                            <p class="data-pedido px-2 m-0">21/06/24</p>
+                            <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
+                            <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
 
                         </div>
-                        <div class="acoes-pedidos d-flex align-items-center gap-3 col-4 d-flex justify-content-center">
+                        <!-- <div class="acoes-pedidos d-flex align-items-center gap-3 col-4 d-flex justify-content-center">
                             <div class="form-group">
                                 <div class="input-group input-status">
                                     <select class="step-pedido form-control input-sm select-status">
@@ -229,28 +229,32 @@
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="acoes-pedidos col-auto d-flex gap-3 align-items-center">
                             <i class="fa-solid fa-sheet-plastic"></i>
                             <span class="m-0 p-0">/</span>
                             <i class="fa-solid fa-pen"></i>
                             <span class="m-0 p-0">/</span>
-                            <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
-                                <i class="fa-solid fa-check-double"></i>
-                                <p class="m-0">Salvar</p>
-                            </button>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class="m-0 p-0">/</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class="m-0 p-0">/</span>
                         </div>
+                        <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
+                            <i class="fa-solid fa-check-double"></i>
+                            <p class="m-0">Salvar</p>
+                        </button>
                     </div>
                     <div class="ctn-pedido editar-pedido">
                         <div class="info-cliente">
                             <div class="container form-group form-venda">
-                                <div class="row mb-2">
-                                    <div class="col-2">
-                                        <label for="Venda">Venda</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-3">
+                                <div class="row my-3">
+                                    <div class="col">
                                         <label for="Empresa">Empresa</label>
                                         <input type="text" class="form-control">
                                     </div>
@@ -258,58 +262,63 @@
                                         <label for="Cliente">Cliente</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-2">
+                                    <div class="col">
                                         <label for="Status">Status</label>
                                         <input type="text" class="form-control">
                                     </div>
+                                    <div class="col">
+                                        <label for="Venda">Pagamento</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="Venda">Total R$</label>
+                                        <input type="text" class="col-2 form-control">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="container form-group form-observacao ">
+                            <!-- <div class="container form-group form-observacao ">
                                 <div class="row mb-2">
                                     <div class="col">
-                                        <label for="obs-nf">Observações na NF do Solicitante</label>
+                                        <label for="obs-nf">Observações Internas da Distribuidora</label>
                                         <textarea type="text" class="form-control"></textarea>
                                     </div>
                                     <div class="col">
-                                        <label for="obs-dist">Observações Internas da Distribuidora</label>
+                                        <label for="obs-dist">Observações na NF do Solicitante</label>
                                         <textarea type="text-area" class="form-control"></textarea>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
-                        <div class="container d-flex p-0 mt-3">
-                            <div class="container col-4 col-xxl-3 form-group m-0 ">
-                                <div class="form-valor container d-flex justify-content-end row bg-success text-white">
-                                    <div class="col-12 p-0">
+                        <div class="container d-flex flex-column align-items-center">
+                            <!-- <div class="container col-6 col-xxl-3 form-group m-0 ">
+                                <div class="form-valor container d-flex justify-content-end gap-3">
+                                    <div class="col p-0">
                                         <label for="Venda">Forma de pagamento</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col p-0" style="padding-right:5px !important;">
-                                        <label for="Venda">Itens R$</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col p-0">
+                                    <div class="col">
                                         <label for="Venda">Total R$</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="col-2 form-control">
                                     </div>
+
                                 </div>
-                            </div>
-                            <div class="container p-0 col-8 col-xxl-9 form-group lista-produtos">
-                                <div class="ctn-lista-pedidos p-2 box-border">
+                            </div> -->
+                            <div class="container p-0 col-12 form-group lista-produtos">
+                                <div class="ctn-lista-pedidos box-border">
                                     <div>
-                                        <h4 class="mtitulo">Itens do Pedido</h4>
+                                        <h6 class="titulo-pedidos">Itens do Pedido</h6>
                                     </div>
                                     <div class="div_scroll">
                                         <div id="listagem_itens_pedidos">
                                             <div>
                                                 <tboby></tboby>
-                                                <table class="table table-striped tabela_produtos">
+                                                <table class="table table-striped lista-produtos-th">
                                                     <thead>
                                                         <tr>
-                                                            <th class="col-6">Produto</th>
-                                                            <th class="col-2 tabela-produto">Quantidade</th>
-                                                            <th class="col-2 tabela-produto-valor">Valor</th>
-                                                            <th class="col-2 tabela-produto-subtotal">SubTotal</th>
+                                                            <th class="col-12">Produto</th>
+                                                            <th class="col tabela-produto">Quantidade</th>
+                                                            <th class="col tabela-produto-valor">Valor</th>
+                                                            <th class="col tabela-produto-subtotal">SubTotal</th>
                                                             <th class="col"></th>
                                                         </tr>
                                                     </thead>

@@ -69,6 +69,7 @@ body{
 .row-gestao-filtros .form-group input,
 .row-gestao-filtros .form-group select,
 .acoes-pedidos .form-group .step-pedido,
+.form-valor div input,
 .info-cliente input{
     height:30px;
     font-size:14px;
@@ -221,19 +222,25 @@ body{
         resize: none;
 }
 .form-valor{
-    padding:1rem !important;
-    background-color: tomato;
     border-radius:5px;
-    margin: 0;
+    margin: 0 0 1rem 0;
 }
 .ctn-lista-pedidos{
-    width:calc(100% - 10px)
+    border:var(--border-container);
 }
 .input-tabela-pedido{
     max-width:75px
 }
 .tabela-produtos-edicao tr{
     background:tomato !important;
-    
     font-size:14px;
+}
+.tabela-produtos-edicao td{
+
+}
+.titulo-pedidos{
+    background:var(--gray-background);
+    text-align: center;
+    padding:5px;
+    border-radius:5px 5px 0 0;
 }
