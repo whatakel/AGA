@@ -65,9 +65,6 @@ body{
     width: 100%;
     margin: 0;
 }
-.row-gestao-filtros > *:not(:last-child){
-    padding:0 1rem 0 0;
-}
 .row-gestao-filtros .form-group input,
 .row-gestao-filtros .form-group select,
 .acoes-pedidos .form-group .step-pedido,
@@ -143,6 +140,17 @@ body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  .icone-filtro{
+    background:var(--preto-claro);
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:.2s ease;
+  }
+  .icone-filtro:hover{
+    background-color: var(--preto);
+    color:white;
+  }
 .box-pedido{
     padding-bottom: 5px;
     transition: .2s ease;
@@ -185,7 +193,8 @@ body{
 }
 .loja-pedido,
 .loja-pedido-valor,
-.pedido-numero-data{
+.pedido-numero-data,
+.numero-pedido{
     font-size:12px;
     line-height: 14px;
 }
@@ -194,6 +203,11 @@ body{
     color:white;
     padding:3px;
     border-radius:3px;
+}
+.numero-pedido{
+    background:var(--preto-claro);
+    padding:3px;
+    border-radius: 3px;
 }
 .box-btn-expand{
     text-align: end;
@@ -240,6 +254,8 @@ body{
 }
 .ctn-lista-pedidos{
     border:var(--border-container);
+    max-width:800px;
+    margin: 0 auto;
 }
 
 .input-tabela-pedido{
@@ -252,8 +268,14 @@ body{
 .tabela-produtos-edicao tr td:not(:first-child){
     text-align: center;
 }
+.lista-produtos-th{
+    margin-bottom: 0;;
+}
 .lista-produtos-th th{
     font-size:1rem;
     color:var(--preto);
-    border-bottom:1px solid var(--preto)
+    border-bottom:1px solid var(--preto);
+}
+.lista-produtos-th i{
+    cursor: pointer;
 }

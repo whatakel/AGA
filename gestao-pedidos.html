@@ -27,7 +27,7 @@
             <div class="gestao-filtros p-2 ">
                 <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas"
                     data-esconde="NAO">
-                    <div class="col-md-2">
+                    <div class="col-md">
                         <div class="form-group">
                             <label for="Status">Status</label>
                             <div class="input-group  input-status">
@@ -45,7 +45,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label for="Empresa">Empresa</label>
+                            <div class="input-group  input-status">
+                                <select name="pesquisa_0" id="pesquisa_0" tipo="buscar" combo="SIM"
+                                    where="vendas.garantia = &quot;[parametro]&quot;" tipopesquisa="Combo"
+                                    class="form-control" onkeydown="return enter_busca(this, event)">
+                                    <option value="" disabled hidden selected=""></option>
+                                    <option value="Confirmado">American</option>
+                                    <option value="Preparando">Bella Vista</option>
+                                    <option value="Preparando">Frigonovak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
                         <div class="form-group" style="margin-bottom: 4px !important;">
                             <label for="Proposta">Proposta</label>
                             <div class="input-group">
@@ -57,7 +72,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         <div class="form-group">
                             <label for="Cliente">Cliente</label>
                             <div class="input-group">
@@ -70,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         <div class="form-group">
                             <label for="Desde">Desde</label>
                             <div class="input-group date datepicker" data-date-autoclose="true"
@@ -83,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md">
                         <div class="form-group">
                             <label for="Até">Até</label>
                             <div class="input-group date datepicker" data-date-autoclose="true"
@@ -117,7 +132,10 @@
             <div class="coluna-pedidos box-border rounded col-3">
                 <div class="titulo-pagina p-2 d-flex flex-wrap">
                     <h5>Pedidos</h5>
-                    <button class="btn btn-sm  btn-success">+ Incluir</button>
+                    <div class="column d-flex align-items-center gap-3 ">
+                        <i class="icone-filtro fa-solid fa-filter"></i>
+                        <button class="btn btn-sm  btn-success">+ Incluir</button>
+                    </div>
                 </div>
                 <div class="lista-produtos">
                     <div class="box-pedido p-2 pedido-active">
@@ -314,7 +332,7 @@
 
                                 </div>
                             </div> -->
-                            <div class="container p-0 col-12 form-group lista-produtos">
+                            <div class="container p-0 col-12 form-group lista-produtos ">
                                 <div class="ctn-lista-pedidos box-border">
                                     <div>
                                         <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
