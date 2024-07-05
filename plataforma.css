@@ -1,8 +1,10 @@
 :root{
     --preto: #222D32;
+    --preto-claro:#00000022;
     --gray-background:#e8e8e8;
     --border-container:1px solid #dddddd;
-    --azul:#0176B4;
+    --azul:#0B5ED7;
+    --verde:#157347;
 }
 
 /* classes genericas */
@@ -145,15 +147,21 @@ body{
     padding-bottom: 5px;
     transition: .2s ease;
     cursor: pointer;
-}
-.box-pedido:hover{
-    background:var(--gray-background);
+    border:1px solid transparent
 }
 .box-pedido:not(:last-child){
     border-bottom:var(--border-container);
 }
+.box-pedido:hover{
+    background:var(--gray-background);
+    border:1px solid var(--azul);
+    border-radius:3px;
+}
 .pedido-active{
     position: relative;
+    background:var(--gray-background);
+    border:1px solid var(--azul) !important;
+    border-radius:3px;
 }
 .pedido-active::before{
     content:"";
@@ -182,7 +190,7 @@ body{
     line-height: 14px;
 }
 .loja-pedido-valor{
-    background: #0176B4;
+    background: var(--azul);
     color:white;
     padding:3px;
     border-radius:3px;
@@ -199,17 +207,22 @@ body{
 .detalhes-pedido .titulo-pagina{
     justify-content: start;
 }
+.status-lista{
+    color:var(--preto-claro);
+    cursor: not-allowed;
+}
+.status-done,
+.pedido-action{  
+    color:var(--preto);
+    cursor:pointer;
+}
 .acoes-principais{
     padding:5px 10px 5px 10px;
     border-radius:5px;
-    background:var(--preto)
+    background:var(--preto-claro);
 }
 .acoes-pedidos span{
     cursor:default ;
-}
-.acoes-pedidos i{
-    cursor: pointer;
-    font-size:20px;
 }
 
 .btn-salvar i{
@@ -228,6 +241,7 @@ body{
 .ctn-lista-pedidos{
     border:var(--border-container);
 }
+
 .input-tabela-pedido{
     max-width:75px
 }
@@ -235,12 +249,11 @@ body{
     background:tomato !important;
     font-size:14px;
 }
-.tabela-produtos-edicao td{
-
-}
-.titulo-pedidos{
-    background:var(--gray-background);
+.tabela-produtos-edicao tr td:not(:first-child){
     text-align: center;
-    padding:5px;
-    border-radius:5px 5px 0 0;
+}
+.lista-produtos-th th{
+    font-size:1rem;
+    color:var(--preto);
+    border-bottom:1px solid var(--preto)
 }

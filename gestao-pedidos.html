@@ -126,7 +126,7 @@
                                 <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
                                 <p class="data-pedido m-0 align-self-center">21/06/24</p>
                             </div>
-                            <i class="icone-status fa-solid fa-boxes-packing icone-status-separando" title="Separando"></i>
+                            <i class="icone-status fa-solid fa-boxes-packing" title="Separando"></i>
                         </div>
                         <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
                             <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
@@ -209,11 +209,17 @@
             </div>
             <div class="cnt-gestao-right d-flex flex-column col-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
-                    <div class="titulo-pagina ctn-detalhes p-2 d-flex justify-content-between">
-                        <div class="group-detalhes-1 d-flex flex-column">
-                            <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
-                            <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
-
+                    <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
+                        <div class="col-auto d-flex flex-row gap-1 ">
+                            <div>
+                                <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
+                                <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
+                            </div>
+                            <div class="acoes-pedidos col-auto d-flex d-flex gap-2 gap-xl-3 align-items-center">
+                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo"></i>
+                                    <span class="m-0 p-0">/</span>
+                                <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido"></i>
+                            </div>
                         </div>
                         <!-- <div class="acoes-pedidos d-flex align-items-center gap-3 col-4 d-flex justify-content-center">
                             <div class="form-group">
@@ -230,25 +236,30 @@
                                 </div>
                             </div>
                         </div> -->
-
-                        <div class="acoes-pedidos col-auto d-flex gap-3 align-items-center">
-                            <i class="fa-solid fa-sheet-plastic"></i>
-                            <span class="m-0 p-0">/</span>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="m-0 p-0">/</span>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="m-0 p-0">/</span>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="m-0 p-0">/</span>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="m-0 p-0">/</span>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class="m-0 p-0">/</span>
+                        <div class="col-auto acoes-pedidos acoes-principais d-flex gap-2 gap-xl-3 align-items-center">
+                            <i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-cart-flatbed"+ Prazo de entrega"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-scale-balanced" title="Ajuste de peso"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-cash-register" title="Faturar + Enviar"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-rotate-left" title="Reabrir venda"></i>
+                                <span class="m-0 p-0">/</span>
+                            <i class="status-lista fa-solid fa-lock-open" title="Devolver para o caixa"></i>
                         </div>
-                        <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
-                            <i class="fa-solid fa-check-double"></i>
-                            <p class="m-0">Salvar</p>
-                        </button>
+                        <div class="d-flex d-flex gap-2 gap-xl-3 col-auto m-0 justify-content-between">
+                            <div class="acoes-pedidos col-auto d-flex d-flex gap-2 gap-xl-3 align-items-center">
+                                <i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i>
+                            </div>
+                            <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="m-0">Confirmar</p>
+                            </button>
+                        </div>
                     </div>
                     <div class="ctn-pedido editar-pedido">
                         <div class="info-cliente">
@@ -306,7 +317,7 @@
                             <div class="container p-0 col-12 form-group lista-produtos">
                                 <div class="ctn-lista-pedidos box-border">
                                     <div>
-                                        <h6 class="titulo-pedidos">Itens do Pedido</h6>
+                                        <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
                                     </div>
                                     <div class="div_scroll">
                                         <div id="listagem_itens_pedidos">
@@ -324,74 +335,34 @@
                                                     </thead>
                                                     <tbody class="tabela-produtos-edicao">
                                                         <tr>
-                                                            <td class="td_produto">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td nowrap="" class="direita td_acoes td_acao_input">
-                                                                <input data-codigo="14937" id="input_produto_qt_14937" tipo="moeda" type="text" onkeyup="Calcula_Item(14937);" data-valor="29.9" value="20,00" class="input-tabela-pedido">
-                                                            </td>
-                                                            <td class="direita td_valor_unitario" data-codigo="14937">29,90</td>
-                                                            <td class="direita td_sub_total" data-codigo="14937">598,00
-                                                            </td>
-                                                            <td onclick="Retirar_Item(257);" nowrap=""
-                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash"></i></td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="td_produto">MUSSARELA RETALHO - PADRÃO - SANTA
-                                                                ROSA</td>
-                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
-                                                                    data-codigo="14940" id="input_produto_qt_14940"
-                                                                    tipo="moeda" type="text"
-                                                                    onkeyup="Calcula_Item(14940);" data-valor="30.5"
-                                                                    value="10,00" class="input-tabela-pedido"></td>
-                                                            <td class="direita td_valor_unitario" data-codigo="14940">
-                                                                30,50</td>
-                                                            <td class="direita td_sub_total" data-codigo="14940">305,00
-                                                            </td>
-                                                            <td onclick="Retirar_Item(269);" nowrap=""
-                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash"></i></td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="td_produto">QUEIJO COLONIAL MISTURA - RETALHO -
-                                                                VENEZA</td>
-                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
-                                                                    data-codigo="14939" id="input_produto_qt_14939"
-                                                                    tipo="moeda" type="text"
-                                                                    onkeyup="Calcula_Item(14939);" data-valor="29.9"
-                                                                    value="10,00" class="input-tabela-pedido"></td>
-                                                            <td class="direita td_valor_unitario" data-codigo="14939">
-                                                                29,90</td>
-                                                            <td class="direita td_sub_total" data-codigo="14939">299,00
-                                                            </td>
-                                                            <td onclick="Retirar_Item(265);" nowrap=""
-                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash"></i></td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="td_produto">QUEIJO PARMESÃO - PEÇA - MINAS</td>
-                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
-                                                                    data-codigo="14941" id="input_produto_qt_14941"
-                                                                    tipo="moeda" type="text"
-                                                                    onkeyup="Calcula_Item(14941);" data-valor="42"
-                                                                    value="6,00" class="input-tabela-pedido"></td>
-                                                            <td class="direita td_valor_unitario" data-codigo="14941">
-                                                                42,00</td>
-                                                            <td class="direita td_sub_total" data-codigo="14941">252,00
-                                                            </td>
-                                                            <td onclick="Retirar_Item(270);" nowrap=""
-                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash"></i></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td class="td_produto">QUEIJO PARMESÃO - PEÇA - NATOBOM</td>
-                                                            <td nowrap="" class="direita td_acoes td_acao_input"><input
-                                                                    data-codigo="14938" id="input_produto_qt_14938"
-                                                                    tipo="moeda" type="text"
-                                                                    onkeyup="Calcula_Item(14938);" data-valor="42"
-                                                                    value="6,00" class="input-tabela-pedido"></td>
-                                                            <td class="direita td_valor_unitario" data-codigo="14938">
-                                                                42,00</td>
-                                                            <td class="direita td_sub_total" data-codigo="14938">252,00
-                                                            </td>
-                                                            <td onclick="Retirar_Item(260);" nowrap=""
-                                                                class="centralizado td_acoes td_acao_menos"><i class="fa-solid fa-trash"></i></td>
-                                                        </tr>
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>
