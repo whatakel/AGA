@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md">
                         <div class="form-group">
-                            <label for="Empresa">Empresa</label>
+                            <label for="Faturado por">Faturado por</label>
                             <div class="input-group  input-status">
                                 <select name="pesquisa_0" id="pesquisa_0" tipo="buscar" combo="SIM"
                                     where="vendas.garantia = &quot;[parametro]&quot;" tipopesquisa="Combo"
@@ -128,8 +128,8 @@
                 </div>
             </div>
         </div>
-        <div class="ctn-pedidos column d-flex flex-row gap-2">
-            <div class="coluna-pedidos box-border rounded col-3">
+        <div class="ctn-pedidos column d-flex flex-row gap-2 flex-wrap flex-lg-nowrap">
+            <div class="coluna-pedidos box-border rounded col-12 col-lg-3">
                 <div class="titulo-pagina p-2 d-flex flex-wrap">
                     <h5>Pedidos</h5>
                     <div class="column d-flex align-items-center gap-3 ">
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="lista-produtos">
-                    <div class="box-pedido p-2 pedido-active">
+                    <div class="box-pedido p-2 pedido-active" data-bs-toggle="modal" data-bs-target="#funcoes-pedido">
                         <div class="box-pedido-status">
                             <div class="d-flex align-items-center gap-2">
                                 <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
@@ -225,7 +225,30 @@
                  
                 </div>
             </div>
-            <div class="cnt-gestao-right d-flex flex-column col-9">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary d-lg-none" data-bs-toggle="modal" data-bs-target="#funcoes-pedido">
+
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="funcoes-pedido" tabindex="-1" aria-labelledby="funcoes-pedidoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ...
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="cnt-gestao-right d-none d-lg-flex flex-column col-12 col-lg-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
                     <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
                         <div class="col-auto d-flex flex-row gap-1 ">
@@ -284,7 +307,7 @@
                             <div class="container form-group form-venda">
                                 <div class="row my-3">
                                     <div class="col">
-                                        <label for="Empresa">Empresa</label>
+                                        <label for="Faturado por">Faturado por</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col">
@@ -394,7 +417,8 @@
             </div>
         </div>
     </div>
-
+    <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
 </body>
 
 </html>

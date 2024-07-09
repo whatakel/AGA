@@ -279,3 +279,12 @@ body{
 .lista-produtos-th i{
     cursor: pointer;
 }
+
+@media screen and (max-width:991px){
+    body{
+        padding-left:0;
+    }
+    .barra-lateral{
+        display: none;;
+    }
+}
