@@ -326,5 +326,10 @@ body{
     .barra-lateral{
         display: none;;
     }
-    
+    .cnt-gestao-right{
+        max-width: none;
+    }
+    .tabela-produtos-edicao tr{
+        font-size:14px;
+    }
 }

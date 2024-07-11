@@ -320,7 +320,7 @@
 
             <!-- Tela confirmação pedido -->
 
-            <div class="cnt-gestao-right d-none d-lg-flex flex-column col-12 col-lg-9">
+            <div class="cnt-gestao-right d-lg-flex flex-column col-12 col-lg-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
                     <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
                         <div class="col-auto d-flex flex-row gap-1 ">
@@ -328,16 +328,16 @@
                                 <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
                                 <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
                             </div>
-                            <div class="acoes-pedidos col-auto d-flex d-flex gap-2 gap-xl-3 align-items-center">
+                            <div class="acoes-pedidos col-auto d-none d-lg-flex d-flex gap-2 gap-xl-3 align-items-center">
                                 <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo"></i>
                                     <span class="m-0 p-0">/</span>
                                 <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido"></i>
                             </div>
                         </div>
-                        <div class="col-auto acoes-pedidos acoes-principais d-flex gap-2 gap-xl-3 align-items-center">
+                        <div class="col-auto acoes-pedidos acoes-principais d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                             <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i></a>
                                 <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-cart-flatbed"+ title="Prazo de entrega"></i></a>
+                            <a href=""><i class="status-lista fa-solid fa-cart-flatbed" title="Prazo de entrega"></i></a>
                                 <span class="m-0 p-0">/</span>
                             <a href=""><i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
                                 <span class="m-0 p-0">/</span>
@@ -350,7 +350,7 @@
                             <a href=""><i class="status-lista fa-solid fa-lock-open" title="Devolver para o caixa"></i></a>
                         </div>
                         <div class="d-flex d-flex gap-2 gap-xl-3 col-auto m-0 justify-content-between">
-                            <div class="acoes-pedidos col-auto d-flex d-flex gap-2 gap-xl-3 align-items-center">
+                            <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                                 <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                             </div>
                             <a href="">
@@ -361,11 +361,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="ctn-pedido editar-pedido">
-                        <div class="info-cliente">
+                    <div class="ctn-pedido editar-pedido m-3">
+                        <div class="info-cliente row">
                             <div class="container form-group">
                                 <div class="row my-3">
-                                    <div class="col">
+                                    <div class="col-6 col-lg">
                                         <label for="Desde">Cliente</label>
                                         <div class="input-group date datepicker" data-date-autoclose="true"
                                             data-date-format="dd-mm-yyyy">
@@ -373,15 +373,15 @@
                                             <button class="input-gp-btn fa-solid fa-magnifying-glass" style="background:var(--gray-background)"></button>    
                                         </div>
                                     </div>
-                                    <div class="col input-incluir">
+                                    <div class="col-6 col-lg input-incluir">
                                         <label for="Faturado por">Faturado por</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col input-incluir">
+                                    <div class="col-6 col-lg input-incluir">
                                         <label for="Venda">Pagamento</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-6 col-lg">
                                         <label for="Status">Status</label>
                                         <input type="text" class="form-control">
                                     </div>
@@ -389,31 +389,18 @@
                             </div>
                             <div class="container form-group form-observacao">
                                 <div class="row">
-                                    <div class="mb-3 col-10">
+                                    <div class="mb-3 col-8 col-lg-10">
                                         <label for="obs-dist">Observações do cliente</label>
                                         <input type="text-area" class="form-control"></input>
                                     </div>
-                                    <div class="col-2">
+                                    <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
                                         <label for="Total">Total R$</label>
                                         <input type="text" class="col-2 form-control">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="container d-flex flex-column align-items-center">
-                            <!-- <div class="container col-6 col-xxl-3 form-group m-0 ">
-                                <div class="form-valor container d-flex justify-content-end gap-3">
-                                    <div class="col p-0">
-                                        <label for="Venda">Forma de pagamento</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col">
-                                        <label for="Venda">Total R$</label>
-                                        <input type="text" class="col-2 form-control">
-                                    </div>
-
-                                </div>
-                            </div> -->
+                        <div class="d-flex flex-column align-items-center row">
                             <div class="container p-0 col-12 form-group tabela-produtos ">
                                 <div class="ctn-lista-pedidos box-border">
                                     <div>
