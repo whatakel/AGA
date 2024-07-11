@@ -23,10 +23,9 @@
 
 
     <div class="main-container p-md-2 p-lg-3">
-        <div class="gestao-pedidos mb-2 box-border rounded col">
-            <div class="gestao-filtros p-2 ">
-                <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas"
-                    data-esconde="NAO">
+        <div class="gestao-pedidos mb-2 box-border rounded col collapse" id="collapseExample">
+            <div class="gestao-filtros p-2">
+                <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas">
                     <div class="col-md">
                         <div class="form-group">
                             <label for="Status">Status</label>
@@ -128,16 +127,16 @@
                 </div>
             </div>
         </div>
-        <div class="ctn-pedidos column d-flex flex-row gap-2 flex-wrap flex-lg-nowrap">
-            <div class="coluna-pedidos box-border rounded col-12 col-lg-3">
+        <div class="ctn-pedidos column d-flex flex-row gap-2 flex-wrap flex-lg-nowrap m-2 m-lg-0">
+            <div class="coluna-pedidos box-border rounded col-12 col-lg-3 ">
                 <div class="titulo-pagina p-2 d-flex flex-wrap">
                     <h5>Pedidos</h5>
                     <div class="column d-flex align-items-center gap-3 ">
-                        <i class="icone-filtro fa-solid fa-filter"></i>
+                        <i class="icone-filtro fa-solid fa-filter" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
                         <button class="btn btn-sm  btn-success">+ Incluir</button>
                     </div>
                 </div>
-                <div class="lista-produtos">
+                <div class="lista-pedidos">
                     <div class="box-pedido p-2 pedido-active" data-bs-toggle="modal" data-bs-target="#funcoes-pedido">
                         <div class="box-pedido-status">
                             <div class="d-flex align-items-center gap-2">
@@ -264,104 +263,7 @@
                         </div>
                     <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
                     </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
-                    <div class="box-pedido p-2">
-                        <div class="box-pedido-status">
-                            <div class="d-flex align-items-center gap-2">
-                                <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt="" class="logo-pedido">
-                                <p class="data-pedido m-0 align-self-center">21/06/24</p>
-                            </div>
-                            <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
-                        </div>
-                        <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
-                            <p class="loja-pedido-valor m-0 col-auto align-items-end">R$11000,00</p>
-                            <p class="numero-pedido m-0">#00000</p>
-                        </div>
-                    <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
-                    </div>
+                   
                  
                 </div>
             </div>
@@ -374,50 +276,50 @@
                     <h5 class="modal-title" id="exampleModalLabel">Ações do Pedido</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i>
+                <div class="modal-body ">
+                    <div class="acoes-pedido-modal acao-modal-done">
+                        <a href=""><i class="fa-solid fa-thumbs-up" title="Confirmado"></i>
                         Confirmar
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-cart-flatbed"+ title="Prazo de entrega"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-cart-flatbed"+ title="Prazo de entrega"></i>
                             Prazo de entrega
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i>
                             Imprimir folha de separação
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-scale-balanced" title="Ajuste de peso"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-scale-balanced" title="Ajuste de peso"></i>
                             Ajuste de peso
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-cash-register" title="Faturar + Enviar"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-cash-register" title="Faturar + Enviar"></i>
                             Faturar / Enviar
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-rotate-left" title="Reabrir venda"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-rotate-left" title="Reabrir venda"></i>
                             Reabrir venda
                         </a>
                     </div>
-                    <div class="acoes-pedido-mogal">
-                        <a href=""><i class="status-lista fa-solid fa-lock-open" title="Devolver para o caixa"></i>
+                    <div class="acoes-pedido-modal">
+                        <a href=""><i class="fa-solid fa-lock-open" title="Devolver para o caixa"></i>
                             Devolver para o caixa
                         </a>
+                    </div>       
                     </div>
-
-                            
-                </div>
-                <div class="modal-footer">
-                </div>
-                </div>
+                    <div class="modal-footer"></div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Tela confirmação pedido -->
+
             <div class="cnt-gestao-right d-none d-lg-flex flex-column col-12 col-lg-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
                     <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
@@ -432,21 +334,6 @@
                                 <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido"></i>
                             </div>
                         </div>
-                        <!-- <div class="acoes-pedidos d-flex align-items-center gap-3 col-4 d-flex justify-content-center">
-                            <div class="form-group">
-                                <div class="input-group input-status">
-                                    <select class="step-pedido form-control input-sm select-status">
-                                        <option value="" disabled hidden selected="">Status</option>
-                                        <option value="Confirmado">Recebido</option>
-                                        <option value="Preparando">Confirmado</option>
-                                        <option value="Faturando">Separando</option>
-                                        <option value="Entregando">Faturando</option>
-                                        <option value="Entregue">Entregando</option>
-                                        <option value="Todos">Finalizado</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="col-auto acoes-pedidos acoes-principais d-flex gap-2 gap-xl-3 align-items-center">
                             <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i></a>
                                 <span class="m-0 p-0">/</span>
@@ -476,42 +363,42 @@
                     </div>
                     <div class="ctn-pedido editar-pedido">
                         <div class="info-cliente">
-                            <div class="container form-group form-venda">
+                            <div class="container form-group">
                                 <div class="row my-3">
                                     <div class="col">
+                                        <label for="Desde">Cliente</label>
+                                        <div class="input-group date datepicker" data-date-autoclose="true"
+                                            data-date-format="dd-mm-yyyy">
+                                            <input class="form-control" type="text">
+                                            <button class="input-gp-btn fa-solid fa-magnifying-glass" style="background:var(--gray-background)"></button>    
+                                        </div>
+                                    </div>
+                                    <div class="col input-incluir">
                                         <label for="Faturado por">Faturado por</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col">
-                                        <label for="Cliente">Cliente</label>
+                                    <div class="col input-incluir">
+                                        <label for="Venda">Pagamento</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col">
                                         <label for="Status">Status</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col">
-                                        <label for="Venda">Pagamento</label>
-                                        <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="container form-group form-observacao">
+                                <div class="row">
+                                    <div class="mb-3 col-10">
+                                        <label for="obs-dist">Observações do cliente</label>
+                                        <input type="text-area" class="form-control"></input>
                                     </div>
-                                    <div class="col">
-                                        <label for="Venda">Total R$</label>
+                                    <div class="col-2">
+                                        <label for="Total">Total R$</label>
                                         <input type="text" class="col-2 form-control">
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="container form-group form-observacao ">
-                                <div class="row mb-2">
-                                    <div class="col">
-                                        <label for="obs-nf">Observações Internas da Distribuidora</label>
-                                        <textarea type="text" class="form-control"></textarea>
-                                    </div>
-                                    <div class="col">
-                                        <label for="obs-dist">Observações na NF do Solicitante</label>
-                                        <textarea type="text-area" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                         <div class="container d-flex flex-column align-items-center">
                             <!-- <div class="container col-6 col-xxl-3 form-group m-0 ">
@@ -587,6 +474,8 @@
                     </div>
                 </div>
             </div>
+            
+
         </div>
     </div>
     <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

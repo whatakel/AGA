@@ -69,6 +69,8 @@ body{
 .row-gestao-filtros .form-group select,
 .acoes-pedidos .form-group .step-pedido,
 .form-valor div input,
+.form-observacao textarea,
+.form-observacao input
 .info-cliente input{
     height:30px;
     font-size:14px;
@@ -120,20 +122,30 @@ body{
     border:var(--border-container);
     border-radius:5px
 }
-.coluna-pedidos{
-    height:calc(100vh - 50px - 32px);
+.input-incluir{
+    position:relative;
+}
+.input-incluir::after{
+    content: "\f078";
+    position: absolute;
+    right:20px;
+    top:50%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size:15px;
+    z-index: 9;
+    pointer-events: none;
 }
 .cnt-gestao-right{
-    max-height:calc(100vh - 75px);
     max-width: calc(75% - 8px);
-    overflow-y: scroll;
+    overflow-y:scroll;
     border-top: var(--border-container);
     border-bottom: var(--border-container);
     border-radius: 5px;
 }
-.lista-produtos{
-    overflow-y: scroll;
-    max-height: 200px;
+.lista-pedidos{
+    overflow-y:scroll;
+    max-height:calc(100vh - 114px - 1rem)
 }
 .cnt-gestao-right::-webkit-scrollbar {
     display: none;
@@ -154,6 +166,7 @@ body{
     color:white;
   }
 .box-pedido{
+    position: relative;
     padding-bottom: 5px;
     transition: .2s ease;
     cursor: pointer;
@@ -186,6 +199,9 @@ body{
     display:flex;
     justify-content: space-between;
     align-items: center;
+}
+.box-pedido-status .fa-circle-check{
+    color:var(--verde);
 }
 .data-pedido{
     font-size:12px;
@@ -244,11 +260,9 @@ body{
 .btn-salvar i{
     font-size:13px
 }
-.form-observacao input{
-    line-height: 5rem;
-}
 .form-observacao textarea{
-        resize: none;
+    resize: none;
+    height: 20px;
 }
 .form-valor{
     border-radius:5px;
@@ -265,7 +279,7 @@ body{
 }
 .tabela-produtos-edicao tr{
     background:tomato !important;
-    font-size:14px;
+    font-size:12px;
 }
 .tabela-produtos-edicao tr td:not(:first-child){
     text-align: center;
@@ -274,12 +288,35 @@ body{
     margin-bottom: 0;;
 }
 .tabela-produtos-th th{
-    font-size:1rem;
+    font-size:1rem !important;
     color:var(--preto);
     border-bottom:1px solid var(--preto);
 }
 .tabela-produtos-th i{
     cursor: pointer;
+}
+.modal-body{
+    display: flex;
+    flex-direction:column;
+    gap:10px
+}
+.acoes-pedido-modal{
+    width: 100%;
+    border:1px solid var(--preto-claro);
+    background-color: var(--gray-background);
+    border-radius:3px;
+    padding:1rem;
+    
+}
+.acoes-pedido-modal a{
+    color:#00000077 ;
+    text-decoration: none;
+}
+.acao-modal-done{
+    background-color: var(--azul);
+}
+.acao-modal-done a{
+    color:white;
 }
 
 @media screen and (max-width:991px){
@@ -289,4 +326,5 @@ body{
     .barra-lateral{
         display: none;;
     }
+    
 }
