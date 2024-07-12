@@ -182,7 +182,7 @@ body{
 }
 .pedido-active{
     position: relative;
-    background:var(--gray-background);
+    background:#00000011;
     border:1px solid var(--azul) !important;
     border-radius:3px;
 }
@@ -268,7 +268,9 @@ body{
     border-radius:5px;
     margin: 0 0 1rem 0;
 }
-.ctn-lista-pedidos{
+.ctn-lista-pedidos,
+.ctn-lista-add,
+.ctn-lista-produtos{
     border:var(--border-container);
     max-width:800px;
     margin: 0 auto;
@@ -312,6 +314,12 @@ body{
     color:#00000077 ;
     text-decoration: none;
 }
+.acao-modal{
+    background-color: var(--preto);
+}
+.acao-modal a{
+    color:white
+}
 .acao-modal-done{
     background-color: var(--azul);
 }
@@ -330,6 +338,6 @@ body{
         max-width: none;
     }
     .tabela-produtos-edicao tr{
-        font-size:14px;
+        font-size:12px;
     }
 }
