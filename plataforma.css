@@ -272,7 +272,44 @@ body{
 .ctn-lista-add,
 .ctn-lista-produtos{
     border:var(--border-container);
-    max-width:800px;
+                                                        <thead>
+                                                        <tr>
+                                                            <th class="col-12">Produto</th>
+                                                            <th class="col tabela-produto">Quantidade</th>
+                                                            <th class="col tabela-produto-valor">Valor</th>
+                                                            <th class="col tabela-produto-subtotal">SubTotal</th>
+                                                            <th class="col"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tabela-produtos-edicao">
+                                                        <tr>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>20,00</td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
+                                                        </tr>
     margin: 0 auto;
 }
 
