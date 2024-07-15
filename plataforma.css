@@ -136,6 +136,9 @@ body{
     z-index: 9;
     pointer-events: none;
 }
+.busca-produto input{
+    border-radius:5px;
+}
 .cnt-gestao-right{
     max-width: calc(75% - 8px);
     overflow-y:scroll;
@@ -143,9 +146,14 @@ body{
     border-bottom: var(--border-container);
     border-radius: 5px;
 }
+.coluna-pedidos{
+    position:relative;
+    height: 100%;
+}
+
 .lista-pedidos{
     overflow-y:scroll;
-    max-height:calc(100vh - 114px - 1rem)
+    max-height:calc(100vh - 114px - 1rem);
 }
 .cnt-gestao-right::-webkit-scrollbar {
     display: none;
@@ -268,56 +276,35 @@ body{
     border-radius:5px;
     margin: 0 0 1rem 0;
 }
+.ctn-lista-produtos{
+    height: 100%;
+}
 .ctn-lista-pedidos,
 .ctn-lista-add,
 .ctn-lista-produtos{
     border:var(--border-container);
-                                                        <thead>
-                                                        <tr>
-                                                            <th class="col-12">Produto</th>
-                                                            <th class="col tabela-produto">Quantidade</th>
-                                                            <th class="col tabela-produto-valor">Valor</th>
-                                                            <th class="col tabela-produto-subtotal">SubTotal</th>
-                                                            <th class="col"></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="tabela-produtos-edicao">
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash" aria-hidden="true"></i></td>
-                                                        </tr>
     margin: 0 auto;
 }
-
+.ctn-lista-add tr input{
+    width: 100%;
+}
+.add-produto{
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--gray-background);
+}
+.icone-add{
+    background-color: var(--verde);
+    color:white;
+    padding: 3px;
+    border-radius:100%;;
+}
 .input-tabela-pedido{
     max-width:75px
 }
 .tabela-produtos-edicao tr{
-    background:tomato !important;
     font-size:12px;
 }
 .tabela-produtos-edicao tr td:not(:first-child){
@@ -333,6 +320,9 @@ body{
 }
 .tabela-produtos-th i{
     cursor: pointer;
+}
+.icone-trash{
+    color:red !important
 }
 .modal-body{
     display: flex;

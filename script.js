@@ -17,3 +17,6 @@ window.addEventListener('resize', () => {
     modalPedidos()
 })
 modalPedidos();
+
+var ctnRight = document.querySelector(".cnt-gestao-right");
+console.log(ctnRight)

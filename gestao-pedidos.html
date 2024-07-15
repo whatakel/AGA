@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div class="lista-pedidos">
-                    <div class="box-pedido p-2 pedido-active" data-bs-toggle="modal" data-bs-target="#funcoes-pedido">
+                    <div class="box-pedido p-2 pedido-active">
                         <div class="box-pedido-status">
                             <div class="d-flex align-items-center gap-2">
                                 <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
@@ -426,80 +426,106 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex flex-column align-items-center row">
-                            <div class="container p-0 col-12 form-group tabela-produtos d-flex gap-3">
-                                <div class="ctn-lista-add col-auto box-border">
-                                    <div class="col-xs-12 col-sm-12 col-md-6">
-                                        <div>
-                                            <h4 class="mtitulo">Listagem de Produtos</h4>
-                                        </div>
-                                        <div class="form-group" data-campo="aux_busca" data-tipo-campo="texto"><label
-                                                data-tipo-campo="texto" for="aux_busca"><i
-                                                    class="fad fa-search"></i>&nbsp;Digite o que deseja buscar ou em
-                                                branco para todos </label><input type="text" name="aux_busca"
-                                                id="aux_busca" class="form-control" campo="NAO" mascara="" tipo="texto"
-                                                tabela_bd="Simples_Auxiliar"
-                                                label="Digite o que deseja buscar ou em branco para todos "
-                                                obrigatorio="False" placeholder="" value="" tipo_endereco="N"
-                                                tipo_consulta_receita="n" tabindex="9" calculo="nao" controla_aba="nao"
-                                                onkeydown="return tab(this, event)"></div>
-                                        <div class="div_scroll div_scroll_2" id="listagem_itens_pedir">
-                                            <div class="titulo_grupo">FRIOS</div>
-                                            <tboby></tboby>
-                                            <table class="table table-striped tabela_produtos">
-                                                <thead>
-                                                    <tr class="linha_cabecalho">
-                                                        <th>Produto</th>
-                                                        <th class="direita">Tabela</th>
-                                                        <th class="centralizado">Unid.</th>
-                                                        <th class="direita">Preço</th>
-                                                        <th class="direita">Qtde</th>
-                                                        <th class="centralizado"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="linha_busca">
-                                                        <td class="td_produto">NOME DO PRODUTO - MARCA</td>
-                                                        <td class="direita">52,00</td>
-                                                        <td class="centralizado">KG</td>
-                                                        <td class="centralizado td_acoes td_acao_input"><input></td>
-                                                        <td class="centralizado td_acoes td_acao_input"><input></td>
-                                                        <td class="centralizado td_acoes td_acao_mais">
-                                                            <i class="fal fa-plus-circle fa-acao"></i>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <div class="titulo_grupo">SECOS</div>
-                                            <tboby></tboby>
-                                            <table class="table table-striped tabela_produtos">
-                                                <thead>
-                                                    <tr class="linha_cabecalho">
-                                                        <th>Produto</th>
-                                                        <th class="direita">Tabela</th>
-                                                        <th class="centralizado">Unid.</th>
-                                                        <th class="direita">Preço</th>
-                                                        <th class="direita">Qtde</th>
-                                                        <th class="centralizado"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="linha_busca">
-                                                        <td class="td_produto">NOME DO PRODUTO - MARCA</td>
-                                                        <td class="direita">52,00</td>
-                                                        <td class="centralizado">KG</td>
-                                                        <td class="centralizado td_acoes td_acao_input"><input></td>
-                                                        <td class="centralizado td_acoes td_acao_input"><input></td>
-                                                        <td class="centralizado td_acoes td_acao_mais">
-                                                            <i class="fal fa-plus-circle fa-acao"></i>
-                                                        </td>
-
-                                                </tbody>
-                                            </table>
+                        <div class="d-flex flex-column align-items-center row p-2">
+                            <div class=" column p-0 col-12 form-group tabela-produtos d-flex gap-2">
+                                <div class="ctn-lista-add m-2col-6 box-border">
+                                    <div>
+                                        <h6 class="titulo-pagina p-2 itens-pedido-tabela">Lista de produtos</h6>
+                                    </div>
+                                    <div class="busca-produto d-flex flex-column p-2">
+                                        <label>
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                            Digite o que deseja buscar ou em branco para todos
+                                        </label>
+                                        <input class="form-control"
+                                            label="Digite o que deseja buscar ou em branco para todos">
+                                    </div>
+                                    <div class="div_scroll">
+                                        <div id="listagem_itens_pedidos">
+                                            <div>
+                                                <div class="titulo-tabela-produto add-produto p-2">FRIOS</div>
+                                                <table class="table table-striped tabela-produtos-th">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-12">Produto</th>
+                                                            <th class="col-auto">Tabela</th>
+                                                            <th class="col-auto">Un.</th>
+                                                            <th class="col-auto">Preço</th>
+                                                            <th class="col-auto">Qtde.</th>
+                                                            <th class="col-auto"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tabela-produtos-edicao">
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <div class="titulo-tabela-produto add-produto p-2">SECOS</div>
+                                                <table class="table table-striped tabela-produtos-th">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-12">Produto</th>
+                                                            <th class="col">Tabela</th>
+                                                            <th class="col">Un.</th>
+                                                            <th class="col">Preço</th>
+                                                            <th class="col">Qtde.</th>
+                                                            <th class="col"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tabela-produtos-edicao">
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td>21,20</td>
+                                                            <td>PCT</td>
+                                                            <td><input></td>
+                                                            <td><input></td>
+                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="ctn-lista-produtos col-auto box-border">
+                                <div class="ctn-lista-produtos col-6 col-auto box-border">
                                     <div>
                                         <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
                                     </div>
@@ -510,8 +536,8 @@
                                                     <thead>
                                                         <tr>
                                                             <th class="col-12">Produto</th>
-                                                            <th class="col tabela-produto">Quantidade</th>
-                                                            <th class="col tabela-produto-valor">Valor</th>
+                                                            <th class="col tabela-produto">Qtde.</th>
+                                                            <th class="col tabela-produto-valor">R$</th>
                                                             <th class="col tabela-produto-subtotal">SubTotal</th>
                                                             <th class="col"></th>
                                                         </tr>
@@ -522,28 +548,28 @@
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
 
                                                     </tbody>
@@ -667,28 +693,28 @@
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash"></i></td>
+                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         
                                                     </tbody>
