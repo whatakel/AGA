@@ -18,6 +18,10 @@ window.addEventListener('resize', () => {
 })
 modalPedidos();
 
-var mainCtnHeight = document.querySelector(".ctn-gestao-right").getBoundingClientRect().top + window.scrollY;
-console.log(mainCtnHeight)
+var ctnPedidos = document.querySelector(".fixed-column");
+var topWindowHeight = window.scrollY;
+var teste = window.innerHeight
 
+window.addEventListener('scroll', () => {
+    console.log(teste)
+})

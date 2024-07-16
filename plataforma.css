@@ -155,8 +155,8 @@ body{
     max-height:calc(100vh - 114px - 1rem);
 }
 .fixed-column{
-    position:fixed;
-    /* width: 100%; */
+    position:absolute;
+    width: 100%;
 }
 .ctn-gestao-right::-webkit-scrollbar {
     display: none;
