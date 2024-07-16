@@ -139,7 +139,7 @@ body{
 .busca-produto input{
     border-radius:5px;
 }
-.cnt-gestao-right{
+.ctn-gestao-right{
     max-width: calc(75% - 8px);
     overflow-y:scroll;
     border-top: var(--border-container);
@@ -147,18 +147,21 @@ body{
     border-radius: 5px;
 }
 .coluna-pedidos{
-    position:relative;
+    position:relative !important;
     height: 100%;
 }
-
 .lista-pedidos{
     overflow-y:scroll;
     max-height:calc(100vh - 114px - 1rem);
 }
-.cnt-gestao-right::-webkit-scrollbar {
+.fixed-column{
+    position:fixed;
+    /* width: 100%; */
+}
+.ctn-gestao-right::-webkit-scrollbar {
     display: none;
   }
-.cnt-gestao-right {
+.ctn-gestao-right {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
@@ -361,7 +364,7 @@ body{
     .barra-lateral{
         display: none;;
     }
-    .cnt-gestao-right{
+    .ctn-gestao-right{
         max-width: none;
     }
     .tabela-produtos-edicao tr{

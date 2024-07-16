@@ -18,5 +18,6 @@ window.addEventListener('resize', () => {
 })
 modalPedidos();
 
-var ctnRight = document.querySelector(".cnt-gestao-right");
-console.log(ctnRight)
+var mainCtnHeight = document.querySelector(".ctn-gestao-right").getBoundingClientRect().top + window.scrollY;
+console.log(mainCtnHeight)
+
