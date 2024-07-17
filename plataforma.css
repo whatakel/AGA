@@ -156,7 +156,11 @@ body{
 }
 .fixed-column{
     position:absolute;
+    top:inherit;
+    height: auto;
+    overflow:hidden;
     width: 100%;
+    transition:.3s ease;
 }
 .ctn-gestao-right::-webkit-scrollbar {
     display: none;
