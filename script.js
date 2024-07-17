@@ -20,8 +20,7 @@ modalPedidos();
 
 const ctnPedidos = document.querySelector(".fixed-column");
 const filtroIcone = document.querySelector(".icone-filtro");
-var ctnFiltroHeight;
-var windowScrollY;
+
 
 function pedidosFixed(){
     var windowScrollY = window.scrollY;
@@ -37,13 +36,13 @@ function pedidosFixed(){
         ctnPedidos.style.top = windowScrollY - ctnFiltroHeight + 'px';
 
     }if(windowScrollY < ctnFiltroHeight){
-        ctnPedidos.style.top = "inherit"
+        ctnPedidos.style.top = "0px"
 
     }if(filtroExpand === "true"){
         setTimeout(() =>{
             var ctnPosition = document.querySelector(".fixed-column").getBoundingClientRect().top
             ctnPedidos.style.height = `calc(${windowHight - ctnPosition}px - 1rem)`
-            console.log(ctnPosition)
+
             }, 300);     
         }
     }

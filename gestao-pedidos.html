@@ -19,11 +19,15 @@
 
     </div>
 
-    <!-- integrar a partir daqui -->
+    <!-- Tela prazo de entrega -->
 
+    <div class="modal-prazo-entrega modal fade">
 
+    </div>
+
+    <!-- Container principal -->
     <div class="main-container p-md-2 p-lg-3">
-        <div class="gestao-pedidos mb-2 box-border rounded col collapse" id="collapseExample">
+        <div class="gestao-pedidos mb-2 box-border rounded col collapse" id="filtroExpand">
             <div class="gestao-filtros p-2">
                 <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas">
                     <div class="col-md">
@@ -131,8 +135,12 @@
                     <div class="titulo-pagina p-2 d-flex flex-wrap">
                         <h5>Pedidos</h5>
                         <div class="column d-flex align-items-center gap-3 ">
+                            <button class="btn btn-sm btn-filtro collapse" id="filtroExpand">
+                                <i class="fa-solid fa-rotate"></i>
+                                Limpar
+                            </button>
                             <i class="icone-filtro fa-solid fa-filter" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
+                                data-bs-target="#filtroExpand" aria-expanded="false" aria-controls="filtroExpand"></i>
                             <button class="btn btn-sm  btn-success">+ Incluir</button>
                         </div>
                     </div>
@@ -334,12 +342,9 @@
                 </div>
             </div>
 
-            <!-- Tela adicionar pedido -->
-
             <div class="ctn-gestao-right d-lg-flex flex-column col-12 col-lg-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
-                    <div
-                        class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
+                    <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
                         <div class="col-auto d-flex flex-row gap-1 ">
                             <div>
                                 <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
@@ -388,6 +393,9 @@
                             </a>
                         </div>
                     </div>
+    
+                <!-- Tela adicionar pedido -->  
+                <!-- 
                     <div class="ctn-pedido adicionar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -583,53 +591,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Tela confirmação pedido -->
-
-            <!-- 
-            <div class="cnt-gestao-right d-lg-flex flex-column col-12 col-lg-9">
-                <div class="detalhes-pedido box-border rounded column col-12">
-                    <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
-                        <div class="col-auto d-flex flex-row gap-1 ">
-                            <div>
-                                <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
-                                <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
-                            </div>
-                            <div class="acoes-pedidos col-auto d-none d-lg-flex d-flex gap-2 gap-xl-3 align-items-center">
-                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo"></i>
-                                    <span class="m-0 p-0">/</span>
-                                <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido"></i>
-                            </div>
-                        </div>
-                        <div class="col-auto acoes-pedidos acoes-principais d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
-                            <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-cart-flatbed" title="Prazo de entrega"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-scale-balanced" title="Ajuste de peso"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-cash-register" title="Faturar + Enviar"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-rotate-left" title="Reabrir venda"></i></a>
-                                <span class="m-0 p-0">/</span>
-                            <a href=""><i class="status-lista fa-solid fa-lock-open" title="Devolver para o caixa"></i></a>
-                        </div>
-                        <div class="d-flex d-flex gap-2 gap-xl-3 col-auto m-0 justify-content-between">
-                            <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
-                                <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
-                            </div>
-                            <a href="">
-                                <button class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
-                                    <i class="fa-solid fa-thumbs-up"></i>
-                                    <p class="m-0">Confirmar</p>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+                -->
+                    
+                <!-- Tela confirmação pedido -->
+                <!--                                   
                     <div class="ctn-pedido confirmar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -686,7 +651,6 @@
                                                             <th class="col tabela-produto">Quantidade</th>
                                                             <th class="col tabela-produto-valor">Valor</th>
                                                             <th class="col tabela-produto-subtotal">SubTotal</th>
-                                                            <th class="col"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="tabela-produtos-edicao">
@@ -695,28 +659,24 @@
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td>20,00</td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                         </tr>
                                                         
                                                     </tbody>
@@ -728,9 +688,14 @@
                             </div>
                         </div>
                     </div>
+                -->
+
+  
+
+                
                 </div>
             </div>
-             -->
+
 
         </div>
     </div>

@@ -154,6 +154,13 @@ body{
     overflow-y:scroll;
     max-height:calc(100vh - 114px - 1rem);
 }
+.lista-pedidos::-webkit-scrollbar{
+    width:10px;
+    background-color: var(--gray-background)
+}
+.lista-pedidos::-webkit-scrollbar-thumb{
+    background: #00000033
+}
 .fixed-column{
     position:absolute;
     top:inherit;
@@ -169,14 +176,16 @@ body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-  .icone-filtro{
+  .icone-filtro,
+  .btn-filtro{
     background:var(--preto-claro);
     padding:5px;
     border-radius: 5px;
     cursor: pointer;
     transition:.2s ease;
   }
-  .icone-filtro:hover{
+  .icone-filtro:hover
+  .btn-filtro:hover{
     background-color: var(--preto);
     color:white;
   }
@@ -285,6 +294,9 @@ body{
 }
 .ctn-lista-produtos{
     height: 100%;
+}
+.ctn-lista-pedidos{
+    max-width: 800px;
 }
 .ctn-lista-pedidos,
 .ctn-lista-add,
