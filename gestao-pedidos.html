@@ -270,7 +270,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ações do Pedido</h5>
+                            <h5 class="modal-title">Ações do Pedido</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body ">
@@ -363,46 +363,46 @@
                             <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                                 <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                             </div>
-                                <!-- Botão para chamar a próxima ação do pedido 
+                            <!-- Botão para chamar a próxima ação do pedido 
                                  Atributos apenas para modal de selecionar data de entrega-->
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#data-entrega"
-                                    class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
-                                        <i class="fa-solid fa-thumbs-up"></i>
-                                        <p class="m-0">Confirmar</p>
-                                </button>
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#data-entrega"
+                                class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                <p class="m-0">Confirmar</p>
+                            </button>
                         </div>
                     </div>
 
                     <!-- Modal prazo de entrega -->
-                    <div class="modal fade " id="data-entrega" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
+                    <div class="modal fade " id="data-entrega" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-prazo">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Previsão de entrega</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h1 class="modal-title fs-5">Previsão de entrega</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="Prazo-entrega" class="fw-bold">Selecione a data de entrega</label>
                                         <div class="input-group date datepicker" data-date-autoclose="true"
                                             data-date-format="dd-mm-yyyy">
-                                            <input value="" class="form-control input-sm">
+                                            <input value="" class="form-control input-sm" inputmode="numeric">
                                             <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer d-flex justify-content-between">
                                     <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Salvar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tela adicionar pedido -->
-                                    
+                    <!-- Tela adicionar/editar pedido -->
+
                     <div class="ctn-pedido adicionar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -444,8 +444,9 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column align-items-center row p-2">
-                            <div class=" column p-0 col-12 form-group tabela-produtos d-flex gap-2">
-                                <div class="ctn-lista-add m-2col-6 box-border">
+                            <div
+                                class=" column p-0 col-12 form-group tabela-produtos d-flex flex-column flex-lg-row gap-2">
+                                <div class="ctn-lista-add col-12 col-lg box-border d-none d-lg-block">
                                     <div>
                                         <h6 class="titulo-pagina p-2 itens-pedido-tabela">Lista de produtos</h6>
                                     </div>
@@ -460,7 +461,6 @@
                                     <div class="div_scroll">
                                         <div id="listagem_itens_pedidos">
                                             <div>
-                                                <div class="titulo-tabela-produto add-produto p-2">FRIOS</div>
                                                 <table class="table table-striped tabela-produtos-th">
                                                     <thead>
                                                         <tr>
@@ -479,7 +479,8 @@
                                                             <td class="d-none d-lg-table-cell">PCT</td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
-                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
@@ -487,7 +488,8 @@
                                                             <td class="d-none d-lg-table-cell">PCT</td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
-                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
@@ -495,46 +497,8 @@
                                                             <td class="d-none d-lg-table-cell">PCT</td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
                                                             <td class="d-none d-lg-table-cell"><input></td>
-                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                                <div class="titulo-tabela-produto add-produto p-2">SECOS</div>
-                                                <table class="table table-striped tabela-produtos-th">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="col-12">Produto</th>
-                                                            <th class="col">Tabela</th>
-                                                            <th class="col">Un.</th>
-                                                            <th class="col">Preço</th>
-                                                            <th class="col">Qtde.</th>
-                                                            <th class="col"></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="tabela-produtos-edicao">
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -542,55 +506,141 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="ctn-lista-produtos col-6 col-auto box-border">
+                                <div class="ctn-lista-produtos col-12 col-lg col-auto box-border">
                                     <div>
-                                        <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
+                                        <div
+                                            class="add-produto-barra titulo-pagina p-2 itens-pedido-tabela d-flex justify-content-between">
+                                            <h6 class="m-0">Itens do Pedido</h6>
+                                            <button class="btn btn-sm btn-success d-lg-none" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#modal-add-produto">
+                                                + Produto</button>
+                                        </div>
                                     </div>
                                     <div class="div_scroll">
-                                        <div id="listagem_itens_pedidos">
-                                            <div>
-                                                <table class="table table-striped tabela-produtos-th">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="col-12">Produto</th>
-                                                            <th class="col tabela-produto">Qtde.</th>
-                                                            <th class="col tabela-produto-valor">R$</th>
-                                                            <th class="col tabela-produto-subtotal">SubTotal</th>
-                                                            <th class="col"></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody class="tabela-produtos-edicao">
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>20,00</td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                            <td><i class="fa-solid fa-trash icone-trash"></i></td>
-                                                        </tr>
+                                        <div>
+                                            <table class="table table-striped tabela-produtos-th">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="col-12">Produto</th>
+                                                        <th class="col tabela-produto">Qtde.</th>
+                                                        <th class="col tabela-produto-valor">R$</th>
+                                                        <th class="col tabela-produto-subtotal">SubTotal</th>
+                                                        <th class="col"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tabela-produtos-edicao">
+                                                    <tr>
+                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td>20,00</td>
+                                                        <td>29,90</td>
+                                                        <td>598,00</td>
+                                                        <td><i class="fa-solid fa-trash icone-trash"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td>20,00</td>
+                                                        <td>29,90</td>
+                                                        <td>598,00</td>
+                                                        <td><i class="fa-solid fa-trash icone-trash"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td>20,00</td>
+                                                        <td>29,90</td>
+                                                        <td>598,00</td>
+                                                        <td><i class="fa-solid fa-trash icone-trash"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td>20,00</td>
+                                                        <td>29,90</td>
+                                                        <td>598,00</td>
+                                                        <td><i class="fa-solid fa-trash icone-trash"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
 
-                                                    </tbody>
-                                                </table>
+                                    <!-- Modal adicionar produto -->
+
+                                    <div class="modal fade" id="modal-add-produto" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-fullscreen">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Adicionar produto</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="lista-modal box-border">
+                                                        <div class="busca-produto d-flex flex-column p-2">
+                                                            <label>
+                                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                                                Procurar produto
+                                                            </label>
+                                                            <input class="form-control"
+                                                                label="Digite o que deseja buscar ou em branco para todos">
+                                                        </div>
+                                                        <div class="div_scroll">
+                                                            <div id="listagem_itens_pedidos">
+                                                                <div>
+                                                                    <table
+                                                                        class="table table-striped tabela-produtos-th">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="col-12">Produto</th>
+                                                                                <th class="col-auto"></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="">
+                                                                            <tr data-bs-toggle="modal" data-bs-target="#btn-add-produto" >
+                                                                                <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                                                <td><i class="fa-solid fa-plus icone-add"></i></i>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer d-flex justify-content-between">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="button" class="btn btn-primary">Salvar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal adicionar-produto -->
+                                <div class="modal fade" id="btn-add-produto" tabindex="-1" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group" style="margin-bottom: 4px !important;">
+                                                    <label for="Proposta">Nome do Produto</label>
+                                                    <div class="input-group">
+                                                        <button class="input-gp-btn">Proposta</button>
+                                                        <input class="form-control input-sm" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-primary">Salvar</button>
                                             </div>
                                         </div>
                                     </div>
@@ -598,10 +648,10 @@
                             </div>
                         </div>
                     </div>
-               
+
 
                     <!-- Tela confirmação pedido -->
-                <!--                                                       
+                    <!--                                                       
                     <div class="ctn-pedido confirmar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -697,9 +747,9 @@
                     </div>
                 -->
 
-                <!-- Tela ajuste de peso -->
+                    <!-- Tela ajuste de peso -->
 
-      
+
 
                 </div>
             </div>

@@ -375,6 +375,9 @@ body{
     .tabela-produtos-edicao tr{
         font-size:12px;
     }
+    .modal-add{
+        
+    }
 }
 
 @media screen and (min-width:991px){
