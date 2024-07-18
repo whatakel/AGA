@@ -289,11 +289,13 @@ body{
 }
 .ctn-lista-pedidos,
 .ctn-lista-add,
-.ctn-lista-produtos{
+.ctn-lista-produtos,
+{
     border:var(--border-container);
     margin: 0 auto;
 }
-.ctn-lista-add tr input{
+.ctn-lista-add tr input,
+.ctn-lista-produtos tr input{
     width: 100%;
 }
 .add-produto{
@@ -318,6 +320,15 @@ body{
 .tabela-produtos-edicao tr td:not(:first-child){
     text-align: center;
 }
+.tabela-produtos-edicao td{
+    align-content: center;
+}
+.icone-trash{
+    border-radius: 100%;
+    background-color: red;
+    color:white;
+    padding:5px;
+}
 .tabela-produtos-th{
     margin-bottom: 0;;
 }
@@ -329,9 +340,7 @@ body{
 .tabela-produtos-th i{
     cursor: pointer;
 }
-.icone-trash{
-    color:red !important
-}
+
 .modal-body{
     display: flex;
     flex-direction:column;
@@ -375,8 +384,18 @@ body{
     .tabela-produtos-edicao tr{
         font-size:12px;
     }
-    .modal-add{
-        
+    .input-add input{
+        height: 50px;
+        width: 100px;
+        font-size:1.5rem;
+        text-align: center;
+    }
+    .modal-header{
+        background:var(--preto);
+        color:white;
+    }
+    .modal-header button{
+        background-color: white;
     }
 }
 
