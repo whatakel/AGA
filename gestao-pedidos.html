@@ -19,12 +19,6 @@
 
     </div>
 
-    <!-- Tela prazo de entrega -->
-
-    <div class="modal-prazo-entrega modal fade">
-
-    </div>
-
     <!-- Container principal -->
     <div class="main-container p-md-2 p-lg-3">
         <div class="gestao-pedidos mb-2 box-border rounded col collapse" id="filtroExpand">
@@ -34,9 +28,7 @@
                         <div class="form-group">
                             <label for="Status">Status</label>
                             <div class="input-group  input-status">
-                                <select name="pesquisa_0" id="pesquisa_0" tipo="buscar" combo="SIM"
-                                    where="vendas.garantia = &quot;[parametro]&quot;" tipopesquisa="Combo"
-                                    class="form-control" onkeydown="return enter_busca(this, event)">
+                                <select class="form-control">
                                     <option value="" disabled hidden selected=""></option>
                                     <option value="Confirmado">Confirmado</option>
                                     <option value="Preparando">Preparando</option>
@@ -52,9 +44,7 @@
                         <div class="form-group">
                             <label for="Faturado por">Faturado por</label>
                             <div class="input-group  input-status">
-                                <select name="pesquisa_0" id="pesquisa_0" tipo="buscar" combo="SIM"
-                                    where="vendas.garantia = &quot;[parametro]&quot;" tipopesquisa="Combo"
-                                    class="form-control" onkeydown="return enter_busca(this, event)">
+                                <select class="form-control">
                                     <option value="" disabled hidden selected=""></option>
                                     <option value="Confirmado">American</option>
                                     <option value="Preparando">Bella Vista</option>
@@ -67,10 +57,7 @@
                         <div class="form-group" style="margin-bottom: 4px !important;">
                             <label for="Proposta">Proposta</label>
                             <div class="input-group">
-                                <input value="" name="pesquisa_1" id="pesquisa_1" tipomascara="Texto" tipo="buscar"
-                                    where="vendas.codvenda = &quot;[parametro]&quot;" tipopesquisa="Texto"
-                                    class="form-control input-sm" type="text"
-                                    onkeydown="return enter_busca(this, event)">
+                                <input class="form-control input-sm" type="text">
                                 <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
                             </div>
                         </div>
@@ -79,10 +66,7 @@
                         <div class="form-group">
                             <label for="Cliente">Cliente</label>
                             <div class="input-group">
-                                <input value="" name="pesquisa_2" id="pesquisa_2" tipomascara="Texto" tipo="buscar"
-                                    where="clientes.cl_nome like &quot;%[parametro]%&quot; or clientes.cl_fantasia like &quot;%[parametro]%&quot;"
-                                    tipopesquisa="Texto" class="form-control input-sm" type="text"
-                                    onkeydown="return enter_busca(this, event)">
+                                <input value="" class="form-control input-sm">
                                 <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
                             </div>
                         </div>
@@ -92,10 +76,7 @@
                             <label for="Desde">Desde</label>
                             <div class="input-group date datepicker" data-date-autoclose="true"
                                 data-date-format="dd-mm-yyyy">
-                                <input value="" name="pesquisa_3" id="pesquisa_3" tipomascara="Data" tipo="buscar"
-                                    where="vendas.datainclusao>= &quot;[parametro]&quot;" tipopesquisa="Data"
-                                    class="form-control input-sm" type="text" maxlength="10" autocomplete="off"
-                                    onkeydown="return enter_busca(this, event)">
+                                <input value="" class="form-control input-sm">
                                 <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
                             </div>
                         </div>
@@ -105,10 +86,7 @@
                             <label for="Até">Até</label>
                             <div class="input-group date datepicker" data-date-autoclose="true"
                                 data-date-format="dd-mm-yyyy">
-                                <input value="" name="pesquisa_4" id="pesquisa_4" tipomascara="Data" tipo="buscar"
-                                    where="vendas.datainclusao<= &quot;[parametro]&quot;" tipopesquisa="Data"
-                                    class="form-control input-sm" type="text" maxlength="10" autocomplete="off"
-                                    onkeydown="return enter_busca(this, event)">
+                                <input value="" class="form-control input-sm">
                                 <button class="input-gp-btn fas fa-calendar-alt"></button>
                             </div>
                         </div>
@@ -148,8 +126,8 @@
                         <div class="box-pedido p-2 pedido-active">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-boxes-packing" title="Separando"></i>
@@ -163,8 +141,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-cart-flatbed" title="Recebido"></i>
@@ -178,8 +156,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-thumbs-up" title="Confirmado"></i>
@@ -193,8 +171,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-cash-register" title="Faturando"></i>
@@ -208,8 +186,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-truck" title="Entregando"></i>
@@ -223,8 +201,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
@@ -238,8 +216,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
@@ -253,8 +231,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
@@ -268,8 +246,8 @@
                         <div class="box-pedido p-2">
                             <div class="box-pedido-status">
                                 <div class="d-flex align-items-center gap-2">
-                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px" alt=""
-                                        class="logo-pedido">
+                                    <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
+                                        alt="" class="logo-pedido">
                                     <p class="data-pedido m-0 align-self-center">21/06/24</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
@@ -280,8 +258,8 @@
                             </div>
                             <p class="loja-pedido m-0 col-auto align-self-center">PIZZA PARA VOCÊ CAPÃO DA IMBUIA</p>
                         </div>
-    
-    
+
+
                     </div>
                 </div>
             </div>
@@ -344,7 +322,8 @@
 
             <div class="ctn-gestao-right d-lg-flex flex-column col-12 col-lg-9">
                 <div class="detalhes-pedido box-border rounded column col-12">
-                    <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
+                    <div
+                        class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
                         <div class="col-auto d-flex flex-row gap-1 ">
                             <div>
                                 <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
@@ -384,24 +363,52 @@
                             <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                                 <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                             </div>
-                            <a href="">
-                                <button
+                                <!-- Botão para chamar a próxima ação do pedido 
+                                 Atributos apenas para modal de selecionar data de entrega-->
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#data-entrega"
                                     class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
-                                    <i class="fa-solid fa-thumbs-up"></i>
-                                    <p class="m-0">Confirmar</p>
+                                        <i class="fa-solid fa-thumbs-up"></i>
+                                        <p class="m-0">Confirmar</p>
                                 </button>
-                            </a>
                         </div>
                     </div>
-    
-                <!-- Tela adicionar pedido -->  
-                <!-- 
+
+                    <!-- Modal prazo de entrega -->
+                    <div class="modal fade " id="data-entrega" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-prazo">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Previsão de entrega</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="Prazo-entrega" class="fw-bold">Selecione a data de entrega</label>
+                                        <div class="input-group date datepicker" data-date-autoclose="true"
+                                            data-date-format="dd-mm-yyyy">
+                                            <input value="" class="form-control input-sm">
+                                            <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tela adicionar pedido -->
+                                    
                     <div class="ctn-pedido adicionar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
                                 <div class="row my-3">
-                                    <div class="col-6 col-lg">
-                                        <label for="Desde">Cliente</label>
+                                    <div class="input-pedido col-6 col-lg">
+                                        <label for="Cliente">Cliente</label>
                                         <div class="input-group date datepicker" data-date-autoclose="true"
                                             data-date-format="dd-mm-yyyy">
                                             <input class="form-control" type="text">
@@ -409,15 +416,15 @@
                                                 style="background:var(--gray-background)"></button>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg input-incluir">
                                         <label for="Faturado por">Faturado por</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg input-incluir">
                                         <label for="Venda">Pagamento</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6 col-lg">
+                                    <div class="input-pedido col-6 col-lg">
                                         <label for="Status">Status</label>
                                         <input type="text" class="form-control">
                                     </div>
@@ -458,37 +465,37 @@
                                                     <thead>
                                                         <tr>
                                                             <th class="col-12">Produto</th>
-                                                            <th class="col-auto">Tabela</th>
-                                                            <th class="col-auto">Un.</th>
-                                                            <th class="col-auto">Preço</th>
-                                                            <th class="col-auto">Qtde.</th>
+                                                            <th class="col-auto d-none d-lg-table-cell">Tabela</th>
+                                                            <th class="col-auto d-none d-lg-table-cell">Un.</th>
+                                                            <th class="col-auto d-none d-lg-table-cell">Preço</th>
+                                                            <th class="col-auto d-none d-lg-table-cell">Qtde.</th>
                                                             <th class="col-auto"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="tabela-produtos-edicao">
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class="d-none d-lg-table-cell">21,20</td>
+                                                            <td class="d-none d-lg-table-cell">PCT</td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class="d-none d-lg-table-cell">21,20</td>
+                                                            <td class="d-none d-lg-table-cell">PCT</td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
                                                         </tr>
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td>21,20</td>
-                                                            <td>PCT</td>
-                                                            <td><input></td>
-                                                            <td><input></td>
-                                                            <td><i class="fa-solid fa-plus icone-add"></i></i></td>
+                                                            <td class="d-none d-lg-table-cell">21,20</td>
+                                                            <td class="d-none d-lg-table-cell">PCT</td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class="d-none d-lg-table-cell"><input></td>
+                                                            <td class=""><i class="fa-solid fa-plus icone-add"></i></i></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -591,31 +598,31 @@
                             </div>
                         </div>
                     </div>
-                -->
-                    
-                <!-- Tela confirmação pedido -->
-                <!--                                   
+               
+
+                    <!-- Tela confirmação pedido -->
+                <!--                                                       
                     <div class="ctn-pedido confirmar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
                                 <div class="row my-3">
                                     <div class="col-6 col-lg">
-                                        <label for="Desde">Cliente</label>
-                                        <div class="input-group date datepicker" data-date-autoclose="true"
+                                        <label for="Cliente">Cliente</label>
+                                        <div class="input-pedido input-group date datepicker" data-date-autoclose="true"
                                             data-date-format="dd-mm-yyyy">
                                             <input class="form-control" type="text">
                                             <button class="input-gp-btn fa-solid fa-magnifying-glass" style="background:var(--gray-background)"></button>    
                                         </div>
                                     </div>
-                                    <div class="col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg input-incluir">
                                         <label for="Faturado por">Faturado por</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg input-incluir">
                                         <label for="Venda">Pagamento</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="col-6 col-lg">
+                                    <div class="input-pedido col-6 col-lg">
                                         <label for="Status">Status</label>
                                         <input type="text" class="form-control">
                                     </div>
@@ -625,11 +632,11 @@
                                 <div class="row">
                                     <div class="mb-3 col-8 col-lg-10">
                                         <label for="obs-dist">Observações do cliente</label>
-                                        <input type="text-area" class="form-control"></input>
+                                        <input type="text-area" class="input-pedido form-control"></input>
                                     </div>
                                     <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
                                         <label for="Total">Total R$</label>
-                                        <input type="text" class="col-2 form-control">
+                                        <input type="text" class="input-pedido col-2 form-control">
                                     </div>
                                 </div>
                             </div>
@@ -690,9 +697,10 @@
                     </div>
                 -->
 
-  
+                <!-- Tela ajuste de peso -->
 
-                
+      
+
                 </div>
             </div>
 

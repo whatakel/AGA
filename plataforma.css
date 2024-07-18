@@ -60,22 +60,33 @@ body{
     flex-direction: row;
     width:100%;
 }
+#filtroExpand{
+    padding:3px 5px 3px 5px;
+}
+#filtroExpand i{
+    font-size:12px
+}
 .row-gestao-filtros{
     display: flex;
     width: 100%;
     margin: 0;
 }
-.row-gestao-filtros .form-group input,
-.row-gestao-filtros .form-group select,
+.form-group input,
+.form-group select,
 .acoes-pedidos .form-group .step-pedido,
 .form-valor div input,
 .form-observacao textarea,
 .form-observacao input
-.info-cliente input{
+.info-cliente input,
+.input-incluir input{
     height:30px;
     font-size:14px;
     padding:0 5px 0 5px;
     box-shadow: none;
+    border:1px solid #00000055;
+}
+.form-group button{
+    border:1px solid #00000055;
 }
 .filtro-mostrar{
     width: auto;
@@ -139,13 +150,6 @@ body{
 .busca-produto input{
     border-radius:5px;
 }
-.ctn-gestao-right{
-    max-width: calc(75% - 8px);
-    overflow-y:scroll;
-    border-top: var(--border-container);
-    border-bottom: var(--border-container);
-    border-radius: 5px;
-}
 .coluna-pedidos{
     position:relative !important;
     height: 100%;
@@ -161,28 +165,13 @@ body{
 .lista-pedidos::-webkit-scrollbar-thumb{
     background: #00000033
 }
-.fixed-column{
-    position:absolute;
-    top:inherit;
-    height: auto;
-    overflow:hidden;
-    width: 100%;
-    transition:.3s ease;
-}
+
 .ctn-gestao-right::-webkit-scrollbar {
     display: none;
   }
 .ctn-gestao-right {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-  }
-  .icone-filtro,
-  .btn-filtro{
-    background:var(--preto-claro);
-    padding:5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition:.2s ease;
   }
   .icone-filtro:hover
   .btn-filtro:hover{
@@ -385,5 +374,31 @@ body{
     }
     .tabela-produtos-edicao tr{
         font-size:12px;
+    }
+}
+
+@media screen and (min-width:991px){
+    .fixed-column{
+        position:absolute;
+        top:inherit;
+        height: auto;
+        overflow:hidden;
+        width: 100%;
+        transition:.3s ease;
+    }
+    .ctn-gestao-right{
+        max-width: calc(75% - 8px);
+        overflow-y:scroll;
+        border-top: var(--border-container);
+        border-bottom: var(--border-container);
+        border-radius: 5px;
+    }
+    .icone-filtro,
+    .btn-filtro{
+      background:var(--preto-claro);
+      padding:5px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition:.2s ease;
     }
 }
