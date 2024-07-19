@@ -23,7 +23,7 @@
     <div class="main-container p-md-2 p-lg-3">
         <div class="gestao-pedidos mb-2 box-border rounded col collapse" id="filtroExpand">
             <div class="gestao-filtros p-2">
-                <div class="row row-gestao-filtros d-flex justify-content-between" id="div_geral_pesquisas">
+                <div class="row row-gestao-filtros d-flex justify-content-between flex-column flex-lg-row align-content-bottom align-items-center">
                     <div class="col-md">
                         <div class="form-group">
                             <label for="Status">Status</label>
@@ -49,6 +49,7 @@
                                     <option value="Confirmado">American</option>
                                     <option value="Preparando">Bella Vista</option>
                                     <option value="Preparando">Frigonovak</option>
+                                    <option value="Preparando">Todos</option>
                                 </select>
                             </div>
                         </div>
@@ -58,7 +59,6 @@
                             <label for="Proposta">Proposta</label>
                             <div class="input-group">
                                 <input class="form-control input-sm" type="text">
-                                <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
                             </div>
                         </div>
                     </div>
@@ -67,42 +67,49 @@
                             <label for="Cliente">Cliente</label>
                             <div class="input-group">
                                 <input value="" class="form-control input-sm">
-                                <button class="input-gp-btn fa-solid fa-magnifying-glass"></button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md">
                         <div class="form-group">
-                            <label for="Desde">Desde</label>
+                            <label for="incluido">Includo em</label>
                             <div class="input-group date datepicker" data-date-autoclose="true"
                                 data-date-format="dd-mm-yyyy">
-                                <input value="" class="form-control input-sm">
+                                <input value="" class="form-control input-sm" placeholder="Início">
+                                <button class="input-gp-btn fas fa-calendar-alt"></button></span>
+                                <input value="" class="form-control input-sm" placeholder="Fim">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label for="faturado">Faturado em</label>
+                            <div class="input-group">
+                                <input value="" class="form-control input-sm" placeholder="Início">
                                 <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
+                                <input value="" class="form-control input-sm" placeholder="Fim">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="Até">Até</label>
-                            <div class="input-group date datepicker" data-date-autoclose="true"
-                                data-date-format="dd-mm-yyyy">
-                                <input value="" class="form-control input-sm">
-                                <button class="input-gp-btn fas fa-calendar-alt"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-mostrar filtro-mostrar form-group dataTables_length" id="dataTable1_length">
+                    <div class="input-mostrar filtro-mostrar form-group" id="dataTable1_length">
                         <label>Mostrar
                             <select name="dataTable1_length" aria-controls="dataTable1" class="form-control input-sm">
                                 <option value="15">15</option>
                                 <option value="25">25</option>
                                 <option value="50">50</option>
                                 <option value="100">100</option>
-                                <option value="200">200</option>
-                                <option value="500">500</option>
-                                <option value="1000">1000</option>
                                 <option value="-1">Todos</option>
                             </select>
+                    </div>
+                    <div class="acoes-filtros d-flex flex-row gap-2 form-group align-items-center ">
+                        <button class="btn btn-sm btn-limpar">
+                            <i class="fa-solid fa-rotate"></i>
+                            Limpar
+                        </button>
+                        <button class="btn btn-sm btn-primary text-light btn-buscar">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Buscar
+                        </button>
                     </div>
                 </div>
             </div>
@@ -111,12 +118,11 @@
             <div class="coluna-pedidos col-12 col-lg-3">
                 <div class="fixed-column box-border rounded">
                     <div class="titulo-pagina p-2 d-flex flex-wrap">
-                        <h5>Pedidos</h5>
-                        <div class="column d-flex align-items-center gap-3 ">
-                            <button class="btn btn-sm btn-filtro collapse" id="filtroExpand">
-                                <i class="fa-solid fa-rotate"></i>
-                                Limpar
-                            </button>
+                        <div class="d-flex flex-row gap-1">
+                            <h5>Pedidos</h5>
+                            <p class="m-0 fw-100">(10)</p>
+                        </div>
+                        <div class="column d-flex align-items-center gap-4 gap-lg-3 ">
                             <i class="icone-filtro fa-solid fa-filter" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#filtroExpand" aria-expanded="false" aria-controls="filtroExpand"></i>
                             <button class="btn btn-sm  btn-success">+ Incluir</button>
@@ -128,7 +134,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-boxes-packing" title="Separando"></i>
                             </div>
@@ -143,7 +149,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-cart-flatbed" title="Recebido"></i>
                             </div>
@@ -158,7 +164,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-thumbs-up" title="Confirmado"></i>
                             </div>
@@ -173,7 +179,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-cash-register" title="Faturando"></i>
                             </div>
@@ -188,7 +194,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-truck" title="Entregando"></i>
                             </div>
@@ -203,7 +209,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
                             </div>
@@ -218,7 +224,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
                             </div>
@@ -233,7 +239,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
                             </div>
@@ -248,7 +254,7 @@
                                 <div class="d-flex align-items-center gap-2">
                                     <img src="https://admin.americangestao.com/vendas/img/logo_aga.png" width="50px"
                                         alt="" class="logo-pedido">
-                                    <p class="data-pedido m-0 align-self-center">21/06/24</p>
+                                    <p class="data-pedido m-0 align-self-center">21/06/2024</p>
                                 </div>
                                 <i class="icone-status fa-solid fa-circle-check" title="Finalizado"></i>
                             </div>
@@ -264,7 +270,7 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Modal funções pedido -->
             <div class="modal fade" id="funcoes-pedido" tabindex="-1" aria-labelledby="funcoes-pedidoLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -327,11 +333,11 @@
                         <div class="col-auto d-flex flex-row gap-1 ">
                             <div>
                                 <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
-                                <p class="data-pedido px-2 m-0">21/06/24 às 10:37</p>
+                                <p class="data-pedido px-2 m-0">21/06/2024 às 10:37</p>
                             </div>
                             <div
                                 class="acoes-pedidos col-auto d-none d-lg-flex d-flex gap-2 gap-xl-3 align-items-center">
-                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo"></i>
+                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
                                 <span class="m-0 p-0">/</span>
                                 <i class="pedido-action funcao-pedido fa-solid fa-print"
                                     title="Imprimir cópia do pedido"></i>
@@ -373,6 +379,28 @@
                         </div>
                     </div>
 
+                    <!-- Modal protocolo -->
+
+                    <div class="modal fade" id="modal-protocolo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Protocolo Pediddo #000000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="ctn-lista-pedidos box-border">
+                                    <p class="titulo-pagina">Time Line</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
                     <!-- Modal prazo de entrega -->
                     <div class="modal fade " id="data-entrega" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-prazo">
@@ -402,8 +430,9 @@
                     </div>
 
                     <!-- Tela adicionar/editar pedido -->
-
-                    <div class="ctn-pedido adicionar-pedido m-3">
+                    
+                    <!-- remover classe d-none -->
+                    <div class="d-none ctn-pedido adicionar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
                                 <div class="row my-3">
@@ -601,10 +630,10 @@
                             </div>
                         </div>
                     </div>
-
+                    
 
                     <!-- Tela confirmação pedido -->
-                    <!--                                                       
+                                                                          
                     <div class="ctn-pedido confirmar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -645,7 +674,152 @@
                             </div>
                         </div>
                         <div class="d-flex flex-column align-items-center row">
-                            <div class="container p-0 col-12 form-group tabela-produtos ">
+                            <div class="container p-0 col-12 form-group tabela-produtos">
+                                <div class="ctn-lista-pedidos box-border">
+                                    <div>
+                                        <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
+                                    </div>
+                                    <div class="div_scroll">
+                                        <div id="listagem_itens_pedidos">
+                                            <div>
+                                                <tboby></tboby>
+                                                <table class="table table-striped tabela-produtos-th">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="col-12">Produto</th>
+                                                            <th class="col tabela-produto px-3">Qtde.</th>
+                                                            <th class="col tabela-produto-valor">Valor</th>
+                                                            <th class="col tabela-produto-subtotal">SubTotal</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="tabela-produtos-edicao">
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                        <tr>
+                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td>29,90</td>
+                                                            <td>598,00</td>
+                                                        </tr>                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+
+                    <!-- Tela faturando/Reabrir venda/ Devolver para o caixa -->
+
+                    <!-- 
+                    <div class="ctn-pedido confirmar-pedido m-3">
+                        <div class="info-cliente row">
+                            <div class="container form-group">
+                                <div class="row my-3">
+                                    <div class="col-6 col-lg">
+                                        <label for="Cliente">Cliente</label>
+                                        <div class="input-pedido input-group date datepicker" data-date-autoclose="true"
+                                            data-date-format="dd-mm-yyyy">
+                                            <input class="form-control" type="text">
+                                            <button class="input-gp-btn fa-solid fa-magnifying-glass" style="background:var(--gray-background)"></button>    
+                                        </div>
+                                    </div>
+                                    <div class="input-pedido col-6 col-lg input-incluir">
+                                        <label for="Faturado por">Faturado por</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-pedido col-6 col-lg input-incluir">
+                                        <label for="Venda">Pagamento</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-pedido col-6 col-lg">
+                                        <label for="Status">Status</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container form-group form-observacao">
+                                <div class="row">
+                                    <div class="mb-3 col-8 col-lg-10">
+                                        <label for="obs-dist">Observações do cliente</label>
+                                        <input type="text-area" class="input-pedido form-control"></input>
+                                    </div>
+                                    <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
+                                        <label for="Total">Total R$</label>
+                                        <input type="text" class="input-pedido col-2 form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column align-items-center row">
+                            <div class="container p-0 col-12 form-group tabela-produtos">
                                 <div class="ctn-lista-pedidos box-border">
                                     <div>
                                         <h6 class="titulo-pagina p-2 itens-pedido-tabela">Itens do Pedido</h6>
@@ -697,11 +871,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                -->
-
-                    <!-- Tela ajuste de peso -->
-
+                    </div> -->
 
 
                 </div>

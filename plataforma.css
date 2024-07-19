@@ -108,7 +108,10 @@ body{
     z-index: 9;
     pointer-events: none;
 }
-
+.form-group label{
+    font-size:14px;
+    white-space: nowrap
+}
 .input-status{
     position:relative;
     width:calc(100% + 20px);
@@ -165,7 +168,6 @@ body{
 .lista-pedidos::-webkit-scrollbar-thumb{
     background: #00000033
 }
-
 .ctn-gestao-right::-webkit-scrollbar {
     display: none;
   }
@@ -173,11 +175,30 @@ body{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
-  .icone-filtro:hover
-  .btn-filtro:hover{
+.acoes-filtros{
+    position: relative;
+    top:7px;
+    width: auto;
+  }
+.icone-filtro,
+.btn-filtro,
+.btn-limpar{
+    background:var(--preto-claro);
+    padding:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:.2s ease;
+  }
+.icone-filtro:hover{
     background-color: var(--preto);
     color:white;
-  }
+    border:1px solid var(--preto) !important;
+}
+.btn-filtro:hover,
+.btn-limpar:hover
+{
+    border:1px solid var(--preto);
+}
 .box-pedido{
     position: relative;
     padding-bottom: 5px;
@@ -286,11 +307,11 @@ body{
 }
 .ctn-lista-pedidos{
     max-width: 800px;
+    margin: 0 auto;
 }
 .ctn-lista-pedidos,
 .ctn-lista-add,
-.ctn-lista-produtos,
-{
+.ctn-lista-produtos{
     border:var(--border-container);
     margin: 0 auto;
 }
@@ -308,8 +329,8 @@ body{
 .icone-add{
     background-color: var(--verde);
     color:white;
-    padding: 3px;
-    border-radius:100%;;
+    padding: 5px;
+    /* border-radius:100px; */
 }
 .input-tabela-pedido{
     max-width:75px
@@ -397,6 +418,12 @@ body{
     .modal-header button{
         background-color: white;
     }
+    .acoes-filtros{
+        width: 100%;
+    }
+    .acoes-filtros button{
+        width: 100%;
+    }
 }
 
 @media screen and (min-width:991px){
@@ -414,13 +441,5 @@ body{
         border-top: var(--border-container);
         border-bottom: var(--border-container);
         border-radius: 5px;
-    }
-    .icone-filtro,
-    .btn-filtro{
-      background:var(--preto-claro);
-      padding:5px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition:.2s ease;
     }
 }
