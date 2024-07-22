@@ -330,7 +330,7 @@ body{
     background-color: var(--verde);
     color:white;
     padding: 5px;
-    /* border-radius:100px; */
+    border-radius:100px;
 }
 .input-tabela-pedido{
     max-width:75px
@@ -341,7 +341,7 @@ body{
 .tabela-produtos-edicao tr td:not(:first-child){
     text-align: center;
 }
-.tabela-produtos-edicao td{
+.tabela-produtos-edicao tr td{
     align-content: center;
 }
 .icone-trash{
