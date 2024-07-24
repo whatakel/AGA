@@ -399,8 +399,29 @@
                                     <p class="titulo-pagina">Time Line</p>
                                 </div>
                             </div>
-                            <div class="modal-footer d-flex justify-content-center">
+                            <div class="modal-footer d-flex justify-content-between">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modal-novo-protocolo">+ Incluir</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal novo protocolo -->
+                    <div class="modal fade" id="modal-novo-protocolo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Protocolo Pedido #000000</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <h6>Novo Protocolo</h6>
+                                <textarea name="novo-protocolo" id="" class="form-control text-area-protocolo col-12"></textarea>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-success">+ Incluir</button>
                             </div>
                         </div>
                         </div>
@@ -437,7 +458,7 @@
                     <!-- Tela adicionar/editar pedido -->
                     
                     <!-- remover classe d-none -->
-                    <div class="ctn-pedido adicionar-pedido m-3">
+                    <div class="d-none ctn-pedido adicionar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
                                 <div class="row my-3">
@@ -509,12 +530,11 @@
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td class="d-none d-lg-table-cell">21,20</td>
                                                             <td class="d-none d-lg-table-cell">PCT</td>
-                                                            <td class="d-none d-lg-table-cell"><input class="form-control"></td>
-                                                            <td class="d-none d-lg-table-cell"><input class="form-control"></td>
+                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
+                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
                                                             <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
                                                             </td>
                                                         </tr>
-
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -546,7 +566,7 @@
                                                     <tr>
                                                         <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                         <td><input class="form-control text-center" type="tel"></td>
-                                                        <td class="d-none d-lg-table-cell"><input class="form-control"></td>
+                                                        <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
                                                         <td>598,00</td>
                                                         <td><i class="fa-solid fa-trash icone-trash"></i></td>
                                                     </tr>
@@ -638,7 +658,7 @@
                     
 
                     <!-- Tela confirmação pedido -->
-<!--                                                                           
+                                                                          
                     <div class="ctn-pedido confirmar-pedido m-3">
                         <div class="info-cliente row">
                             <div class="container form-group">
@@ -700,76 +720,10 @@
                                                     <tbody class="tabela-produtos-edicao">
                                                         <tr>
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
+                                                            <td><input class="form-control text-center" type="number"></td>
                                                             <td>29,90</td>
                                                             <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number" value="20,00"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                        
+                                                        </tr>                                                                                                               
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -779,7 +733,7 @@
                             </div>
                         </div>
                     </div>
-                -->
+               
 
                     <!-- Tela faturando/Reabrir venda/ Devolver para o caixa -->
 

@@ -391,6 +391,10 @@ body{
 .acao-modal-done a{
     color:white;
 }
+.text-area-protocolo{
+    height: 200px;
+    resize: none;
+}
 
 @media screen and (max-width:991px){
     body{
@@ -404,12 +408,6 @@ body{
     }
     .tabela-produtos-edicao tr{
         font-size:12px;
-    }
-    .input-add input{
-        height: 50px;
-        width: 100px;
-        font-size:1.5rem;
-        text-align: center;
     }
     .modal-header{
         background:var(--preto);
