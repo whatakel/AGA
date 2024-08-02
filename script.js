@@ -18,8 +18,11 @@ window.addEventListener('resize', () => {
 })
 modalPedidos();
 
+<<<<<<< HEAD
 // função sticky para barra lateral de pedidos
 
+=======
+>>>>>>> e87ca52272cbb47721ec826bf77982a9a719ffd8
 const ctnPedidos = document.querySelector(".fixed-column");
 const filtroIcone = document.querySelector(".icone-filtro");
 
