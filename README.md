@@ -1,2 +1,0 @@
-# AGA
-Trabalho pessoal
