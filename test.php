@@ -1,5 +1,16 @@
-<?php
-	ini_set('display_errors', 1);
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+
+ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
@@ -104,13 +115,13 @@
             $erro = true;
 
         } else {
-            echo "Sucesso".'<br>';
-            //echo '<pre>';            print_r($resposta->data);            echo '</pre>';
+			$pedidos_abertos = [];
 
-			foreach($resposta as $dado) {
-				//var_dump($dado);
-				echo '<pre>';            print_r($dado);            echo '</pre>';
-				//echo '<h1>'.$dado->pe_status.'</h1>';
+			foreach($resposta->data as $dado) {
+				if($dado->pe_status !== "Finalizado" && $dado->pe_status !== "Cancelado"){
+					$pedidos_abertos = $dado;
+					echo '<pre>'; print_r($pedidos_abertos->codsite_lj_pedidos); echo '</pre>';
+				}
 			}
 
             $erro = false;
@@ -118,25 +129,7 @@
 
     }
 
+    ?>
+</body>
 
-	curl_setopt_array($curl, array(
-		CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/clientes/DataInicial>=2024-01-01',
-		CURLOPT_RETURNTRANSFER => true,
-		CURLOPT_SSL_VERIFYHOST => 0,
-		CURLOPT_SSL_VERIFYPEER => 0,				
-		CURLOPT_ENCODING => '',
-		CURLOPT_MAXREDIRS => 10,
-		CURLOPT_TIMEOUT => 0,
-		CURLOPT_FOLLOWLOCATION => true,
-		CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-		CURLOPT_CUSTOMREQUEST => 'GET',
-		CURLOPT_HTTPHEADER => array(
-				'Content-Type: application/json',
-				'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
-				'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
-				'Authorization: '.$tipo.' '.$token
-
-		),
-));
-		
-	curl_close($curl);
+</html>
