@@ -333,19 +333,23 @@ $pedidos = $pedidos_abertos;
                 </div>
             </div>
             <div class="ctn-gestao-right d-lg-flex flex-column col-12 col-lg-9">
-                <iframe id="pedido_edicao" src="https://americangestao.com/img/logo-site.svg" style="width:100%; height: calc(100vh - 85px);"></iframe>
+                <!-- <div class="background-right">
+                        <img src="img/logo.svg" width="50%">
+                </div> -->
+                <iframe id="pedido_edicao" src="info-pedido.php" style="width:100%; height: calc(100vh - 85px);"></iframe>
             </div>
         </div>
     </div>
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/jquery-3.7.1.min.js"></script>
-    <script src="/script.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
     <script>
-        $('.box-pedido').on('click', function(){
-            console.log($(this).attr('data-codigo'));
-            $('#pedido_edicao').attr('src','pedido.php?='+$(this).attr('data-codigo'));
-        });
-    </script>
+        document.querySelector('.box-pedido').forEach((element) =>{
+            element.addEventListener('click', () =>{
+                console.log(this.getAttribute('data-codigo'));
+                document.getElementById('pedido_edicao').setAttribute('src', 'pedido.php?codigo=' + this.getAttribute('data-codigo'));
+            })
+        })>
 </body>
 
 </html>
