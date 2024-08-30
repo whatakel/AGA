@@ -108,6 +108,7 @@ if ($err) {
 
 $pedidos = [];
 $pedidos = $pedidos_abertos;
+$qtd_pedidos = count($pedidos);
 
 // echo '<pre>'; print_r($pedidos); echo '</pre>';
 ?>
@@ -118,11 +119,11 @@ $pedidos = $pedidos_abertos;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo tela Gestão de Pedidos</title>
+    <title>AGA - Gestão de Pedidos</title>
 
-    <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="plataforma.css">
+    <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="">
@@ -139,92 +140,94 @@ $pedidos = $pedidos_abertos;
             <div class="gestao-filtros p-2">
                 <div class="row row-gestao-filtros d-flex justify-content-between flex-column flex-lg-row align-content-bottom align-items-center">
                     <div class="col-md">
-                        <div class="form-group">
-                            <label for="Status">Status</label>
-                            <div class="input-group  input-status">
-                                <select class="form-control">
-                                    <option value="" disabled hidden selected=""></option>
-                                    <option value="Confirmado">Confirmado</option>
-                                    <option value="Preparando">Preparando</option>
-                                    <option value="Faturando">Faturando</option>
-                                    <option value="Entregando">Entregando</option>
-                                    <option value="Entregue">Entregue</option>
-                                    <option value="Todos">Todos</option>
-                                </select>
+                        <form action="" method="GET">
+                            <div class="form-group">
+                                <label for="Status">Status</label>
+                                <div class="input-group  input-status">
+                                    <select class="form-control">
+                                        <option value="" disabled hidden selected=""></option>
+                                        <option value="Confirmado">Confirmado</option>
+                                        <option value="Preparando">Preparando</option>
+                                        <option value="Faturando">Faturando</option>
+                                        <option value="Entregando">Entregando</option>
+                                        <option value="Entregue">Entregue</option>
+                                        <option value="Todos">Todos</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="Faturado por">Faturado por</label>
-                            <div class="input-group  input-status">
-                                <select class="form-control">
-                                    <option value="" disabled hidden selected=""></option>
-                                    <option value="Confirmado">American</option>
-                                    <option value="Preparando">Bella Vista</option>
-                                    <option value="Preparando">Frigonovak</option>
-                                    <option value="Preparando">Todos</option>
-                                </select>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-group" style="margin-bottom: 4px !important;">
-                            <label for="Proposta">Proposta</label>
-                            <div class="input-group">
-                                <input class="form-control input-sm" type="text">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="Faturado por">Faturado por</label>
+                                    <div class="input-group  input-status">
+                                        <select class="form-control">
+                                            <option value="" disabled hidden selected=""></option>
+                                            <option value="Confirmado">American</option>
+                                            <option value="Preparando">Bella Vista</option>
+                                            <option value="Preparando">Frigonovak</option>
+                                            <option value="Preparando">Todos</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="Cliente">Cliente</label>
-                            <div class="input-group">
-                                <input value="" class="form-control input-sm">
+                            <div class="col-md">
+                                <div class="form-group" style="margin-bottom: 4px !important;">
+                                    <label for="Proposta">Proposta</label>
+                                    <div class="input-group">
+                                        <input class="form-control input-sm" type="text">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="incluido">Includo em</label>
-                            <div class="input-group date datepicker" data-date-autoclose="true"
-                                data-date-format="dd-mm-yyyy">
-                                <input value="" class="form-control input-sm" placeholder="Início">
-                                <button class="input-gp-btn fas fa-calendar-alt"></button></span>
-                                <input value="" class="form-control input-sm" placeholder="Fim">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="Cliente">Cliente</label>
+                                    <div class="input-group">
+                                        <input value="" class="form-control input-sm">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md">
-                        <div class="form-group">
-                            <label for="faturado">Faturado em</label>
-                            <div class="input-group">
-                                <input value="" class="form-control input-sm" placeholder="Início">
-                                <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
-                                <input value="" class="form-control input-sm" placeholder="Fim">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="incluido">Includo em</label>
+                                    <div class="input-group date datepicker" data-date-autoclose="true"
+                                        data-date-format="dd-mm-yyyy">
+                                        <input value="" class="form-control input-sm" placeholder="Início">
+                                        <button class="input-gp-btn fas fa-calendar-alt"></button></span>
+                                        <input value="" class="form-control input-sm" placeholder="Fim">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="input-mostrar filtro-mostrar form-group" id="dataTable1_length">
-                        <label>Mostrar
-                            <select name="dataTable1_length" aria-controls="dataTable1" class="form-control input-sm">
-                                <option value="15">15</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                                <option value="-1">Todos</option>
-                            </select>
-                    </div>
-                    <div class="acoes-filtros d-flex flex-row gap-2 form-group align-items-center ">
-                        <button class="btn btn-sm btn-limpar">
-                            <i class="fa-solid fa-rotate"></i>
-                            Limpar
-                        </button>
-                        <button class="btn btn-sm btn-primary text-light btn-buscar">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            Buscar
-                        </button>
-                    </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="faturado">Faturado em</label>
+                                    <div class="input-group">
+                                        <input value="" class="form-control input-sm" placeholder="Início">
+                                        <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
+                                        <input value="" class="form-control input-sm" placeholder="Fim">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-mostrar filtro-mostrar form-group" id="dataTable1_length">
+                                <label>Mostrar
+                                    <select name="dataTable1_length" aria-controls="dataTable1" class="form-control input-sm">
+                                        <option value="15">15</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                        <option value="-1">Todos</option>
+                                    </select>
+                            </div>
+                            <div class="acoes-filtros d-flex flex-row gap-2 form-group align-items-center ">
+                                <button class="btn btn-sm btn-limpar">
+                                    <i class="fa-solid fa-rotate"></i>
+                                    Limpar
+                                </button>
+                                <button class="btn btn-sm btn-primary text-light btn-buscar" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    Buscar
+                                </button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
@@ -234,7 +237,7 @@ $pedidos = $pedidos_abertos;
                     <div class="titulo-pagina p-2 d-flex flex-wrap">
                         <div class="d-flex flex-row gap-1">
                             <h5>Pedidos</h5>
-                            <p class="m-0 fw-100">(10)</p>
+                            <p class="m-0 fw-100">(<?php echo $qtd_pedidos?>)</p>
                         </div>
                         <div class="column d-flex align-items-center gap-4 gap-lg-3 ">
                             <i class="icone-filtro fa-solid fa-filter" type="button" data-bs-toggle="collapse"
@@ -333,9 +336,9 @@ $pedidos = $pedidos_abertos;
                 </div>
             </div>
             <div class="ctn-gestao-right d-lg-flex flex-column col-12 col-lg-9">
-                <!-- <div class="background-right">
-                        <img src="img/logo.svg" width="50%">
-                </div> -->
+                <div class="background-right">
+                    <img src="img/logo.svg" width="50%">
+                </div>
                 <iframe id="pedido_edicao" src="info-pedido.php" style="width:100%; height: calc(100vh - 85px);"></iframe>
             </div>
         </div>
@@ -343,13 +346,5 @@ $pedidos = $pedidos_abertos;
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.querySelector('.box-pedido').forEach((element) =>{
-            element.addEventListener('click', () =>{
-                console.log(this.getAttribute('data-codigo'));
-                document.getElementById('pedido_edicao').setAttribute('src', 'pedido.php?codigo=' + this.getAttribute('data-codigo'));
-            })
-        })>
 </body>
-
 </html>

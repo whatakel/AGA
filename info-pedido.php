@@ -39,14 +39,14 @@
 
     if ($err) {
         $erro = true;
-        $mensagem_erro = 'Erro obten��o do token: '.$httpcode . ' - ' . $err;
+        $mensagem_erro = 'Erro obtenção do token: '.$httpcode . ' - ' . $err;
     } else {
         if (
             $httpcode != 200
             && $httpcode != 201
         ) {
             $erro = true;
-            $mensagem_erro = 'Erro obten��o da token HTTP: ' . $httpcode;
+            $mensagem_erro = 'Erro obtenção da token HTTP: ' . $httpcode;
         }
     }
 
@@ -69,7 +69,7 @@
     $mensagem_erro  = '';
 
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/pedidos/'. ($_GET['codigo'] ?? ''),
+        CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/pedidos/'.$_GET['codigo'],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_SSL_VERIFYHOST => 0,
         CURLOPT_SSL_VERIFYPEER => 0,
@@ -112,40 +112,31 @@
     $resposta = json_decode($response);
 
     
-    // $pedido = $resposta->data[0];
-   // echo '<pre>'; print_r($pedido); echo '</pre>';
+    $pedido = $resposta->data[0];
+    // echo '<pre>'; print_r($pedido); echo '</pre>';
 
     curl_close($curl);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo tela Gestão de Pedidos</title>
 
-    <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="plataforma.css">
+    <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
 </head>
 
 <body style="padding: 0; margin: 0;">
-
                 <div class="detalhes-pedido box-border rounded column col-12">
                     <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
                         <div class="col-auto d-flex flex-row gap-1 ">
                             <div>
-                                <h6 class="px-2 m-0 d-flex">#000000 / #000000</h6>
-                                <p class="data-pedido px-2 m-0">21/06/2024 às 10:37</p>
-                            </div>
-                            <div
-                                class="acoes-pedidos col-auto d-none d-lg-flex d-flex gap-2 gap-xl-3 align-items-center">
-                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
-                                <span class="m-0 p-0">/</span>
-                                <i class="pedido-action funcao-pedido fa-solid fa-print"
-                                    title="Imprimir cópia do pedido"></i>
+                                <h6 class="px-2 m-0 d-flex">Pedido: <?php echo $pedido->codsite_lj_pedidos;?></h6>
+                                <p class="data-pedido px-2 m-0"><?php echo date('d/m/Y', strtotime($pedido->pe_dthr));?> &agrave;s <?php echo date('H:i', strtotime($pedido->pe_dthr)); ?></p>
                             </div>
                         </div>
                         <div
@@ -172,6 +163,11 @@
                         </div>
                         <div class="d-flex d-flex gap-2 gap-xl-3 col-auto m-0 justify-content-between">
                             <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
+                                <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
+                                <span class="m-0 p-0">/</span>
+                                <i class="pedido-action funcao-pedido fa-solid fa-print"
+                                title="Imprimir cópia do pedido"></i>
+                                <span class="m-0 p-0">/</span>
                                 <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                             </div>
                             <!-- Botão para chamar a próxima ação do pedido 
@@ -193,23 +189,21 @@
                                 <div class="row my-3">
                                     <div class="col-6 col-lg">
                                         <label for="Cliente">Cliente</label>
-                                        <div class="input-pedido input-group date datepicker" data-date-autoclose="true"
-                                            data-date-format="dd-mm-yyyy">
-                                            <input class="form-control" type="text">
-                                            <button class="input-gp-btn fa-solid fa-magnifying-glass" style="background:var(--gray-background)"></button>    
+                                        <div class="input-pedido input-group date datepicker" data-date-autoclose="true" data-date-format="dd-mm-yyyy">
+                                            <input class="form-control" type="text" value="<?php echo $pedido->cl_nome; ?>" disabled>
                                         </div>
                                     </div>
-                                    <div class="input-pedido col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg ">
                                         <label for="Faturado por">Faturado por</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?php echo $pedido->lo_descricao ?>" disabled>
                                     </div>
-                                    <div class="input-pedido col-6 col-lg input-incluir">
+                                    <div class="input-pedido col-6 col-lg">
                                         <label for="Venda">Pagamento</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?php echo $pedido->fp_descricao?>" disabled>
                                     </div>
                                     <div class="input-pedido col-6 col-lg">
                                         <label for="Status">Status</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?php echo $pedido->pe_status ?>" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -217,11 +211,11 @@
                                 <div class="row">
                                     <div class="mb-3 col-8 col-lg-10">
                                         <label for="obs-dist">Observações do cliente</label>
-                                        <input type="text-area" class="input-pedido form-control"></input>
+                                        <input type="text-area" class="input-pedido form-control" value="<?php echo $pedido->pe_status ?>" disabled></input>
                                     </div>
                                     <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
                                         <label for="Total">Total R$</label>
-                                        <input type="text" class="input-pedido col-2 form-control">
+                                        <input type="text" class="input-pedido col-2 form-control" value="<?php echo $pedido->pe_valor_total ?>" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -246,12 +240,18 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="tabela-produtos-edicao">
-                                                        <tr>
-                                                            <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                            <td><input class="form-control text-center" type="number"></td>
-                                                            <td>29,90</td>
-                                                            <td>598,00</td>
-                                                        </tr>                                                                                                               
+                                                    <?php 
+                                                    forEach($pedido->itens as $item){
+                                                        echo '
+                                                            <tr>
+                                                                <td>'.$item->Descricao.'</td>
+                                                                <td>'.intval($item->Qtde).'</td>
+                                                                <td>'.number_format($item->Unitario, 2, ',','.').'</td>
+                                                                <td>'.number_format($item->Unitario, 2, ',','.').'</td>
+                                                            </tr>
+                                                        ';
+                                                    }
+                                                ?>                                                                                                            
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -261,12 +261,8 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-<script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="plugins/jquery-3.7.1.min.js"></script>
-<script src="script.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
 </body>
-
 </html>

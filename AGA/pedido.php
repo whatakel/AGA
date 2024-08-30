@@ -39,14 +39,14 @@
 
     if ($err) {
         $erro = true;
-        $mensagem_erro = 'Erro obtenção do token: '.$httpcode . ' - ' . $err;
+        $mensagem_erro = 'Erro obtenï¿½ï¿½o do token: '.$httpcode . ' - ' . $err;
     } else {
         if (
             $httpcode != 200
             && $httpcode != 201
         ) {
             $erro = true;
-            $mensagem_erro = 'Erro obtenção da token HTTP: ' . $httpcode;
+            $mensagem_erro = 'Erro obtenï¿½ï¿½o da token HTTP: ' . $httpcode;
         }
     }
 
@@ -93,14 +93,14 @@
 
     if ($err) {
         $erro = true;
-        $mensagem_erro = 'Erro obtenção dos pedidos: '.$httpcode . ' - ' . $err;
+        $mensagem_erro = 'Erro obtenï¿½ï¿½o dos pedidos: '.$httpcode . ' - ' . $err;
     } else {
         if (
             $httpcode != 200
             && $httpcode != 201
         ) {
             $erro = true;
-            $mensagem_erro = 'Erro obtenção dos pedidos HTTP: ' . $httpcode;
+            $mensagem_erro = 'Erro obtenï¿½ï¿½o dos pedidos HTTP: ' . $httpcode;
         }
     }
 
@@ -123,7 +123,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo tela Gestão de Pedidos</title>
+    <title>Protï¿½tipo tela Gestï¿½o de Pedidos</title>
 
     <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" type="text/css"/>
     <link rel="stylesheet" href="plugins/fontawesome/css/font-awesome-animation.min.css" type="text/css" />
@@ -146,7 +146,7 @@
                             <i class="pedido-action funcao-pedido fad fa-file" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
                             <span class="m-0 p-0">/</span>
                             <i class="pedido-action funcao-pedido fad fa-print"
-                               title="Imprimir cópia do pedido"></i>
+                               title="Imprimir cï¿½pia do pedido"></i>
                         </div>
                     </div>
                     <div
@@ -158,7 +158,7 @@
                                       title="Prazo de entrega"></i></a>
                         <span class="m-0 p-0">/</span>
                         <a href=""><i class="status-lista fad fa-box-full"
-                                      title="Imprimir folha de separação"></i></a>
+                                      title="Imprimir folha de separaï¿½ï¿½o"></i></a>
                         <span class="m-0 p-0">/</span>
                         <a href=""><i class="status-lista fad fa-balance-scale"
                                       title="Ajuste de peso"></i></a>
@@ -175,7 +175,7 @@
                         <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                             <a href=""><i class="pedido-action fad fa-pen" title="Editar pedido"></i></a>
                         </div>
-                        <!-- Botão para chamar a próxima ação do pedido
+                        <!-- Botï¿½o para chamar a prï¿½xima aï¿½ï¿½o do pedido
                              Atributos apenas para modal de selecionar data de entrega-->
                         <button type="button" data-bs-toggle="modal" data-bs-target="#data-entrega"
                                 class="btn btn-sm btn-salvar btn-primary col-auto d-flex align-items-center gap-1">
@@ -232,7 +232,7 @@
                     <div class="modal-dialog modal-dialog-centered modal-prazo">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5">Previsão de entrega</h1>
+                                <h1 class="modal-title fs-5">Previsï¿½o de entrega</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
@@ -288,7 +288,7 @@
                         <div class="container form-group form-observacao">
                             <div class="row">
                                 <div class="mb-3 col-8 col-lg-10">
-                                    <label for="obs-dist">Observações do cliente</label>
+                                    <label for="obs-dist">Observaï¿½ï¿½es do cliente</label>
                                     <input type="text-area" class="form-control"></input>
                                 </div>
                                 <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
@@ -320,14 +320,14 @@
                                                 <th class="col-12">Produto</th>
                                                 <th class="col-auto d-none d-lg-table-cell">Tabela</th>
                                                 <th class="col-auto d-none d-lg-table-cell">Un.</th>
-                                                <th class="col-auto d-none d-lg-table-cell">Preço</th>
+                                                <th class="col-auto d-none d-lg-table-cell">Preï¿½o</th>
                                                 <th class="col-auto d-none d-lg-table-cell">Qtde.</th>
                                                 <th class="col-auto"></th>
                                             </tr>
                                             </thead>
                                             <tbody class="tabela-produtos-edicao">
                                             <tr>
-                                                <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                <td>MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                 <td class="d-none d-lg-table-cell">21,20</td>
                                                 <td class="d-none d-lg-table-cell">PCT</td>
                                                 <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
@@ -357,7 +357,7 @@
                                             <tr>
                                                 <th class="col-12">Produto</th>
                                                 <th class="col tabela-produto px-3 px-lg-2">Qtde.</th>
-                                                <th class="col tabela-produto-valor d-none d-lg-table-cell">Preço</th>
+                                                <th class="col tabela-produto-valor d-none d-lg-table-cell">Preï¿½o</th>
                                                 <th class="col tabela-produto-subtotal">R$</th>
                                                 <th class="col"></th>
                                             </tr>
@@ -416,7 +416,7 @@
                                                                     </thead>
                                                                     <tbody class="">
                                                                     <tr data-bs-toggle="modal" data-bs-target="#btn-add-produto">
-                                                                        <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                                        <td>MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                                         <td><i class="fad fa-plus icone-add"></i></i>
                                                                         </td>
                                                                     </tr>
@@ -463,7 +463,7 @@
                 </div>
 
 
-                <!-- Tela confirmação pedido -->
+                <!-- Tela confirmaï¿½ï¿½o pedido -->
 
                 <div class="ctn-pedido confirmar-pedido m-3">
                     <div class="info-cliente row">
@@ -579,7 +579,7 @@
                         <div class="container form-group form-observacao">
                             <div class="row">
                                 <div class="mb-3 col-8 col-lg-10">
-                                    <label for="obs-dist">Observações do cliente</label>
+                                    <label for="obs-dist">Observaï¿½ï¿½es do cliente</label>
                                     <input type="text-area" class="input-pedido form-control"></input>
                                 </div>
                                 <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
@@ -610,25 +610,25 @@
                                                 </thead>
                                                 <tbody class="tabela-produtos-edicao">
                                                     <tr>
-                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td class="">MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                         <td>20,00</td>
                                                         <td>29,90</td>
                                                         <td>598,00</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td class="">MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                         <td>20,00</td>
                                                         <td>29,90</td>
                                                         <td>598,00</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td class="">MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                         <td>20,00</td>
                                                         <td>29,90</td>
                                                         <td>598,00</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
+                                                        <td class="">MUSSARELA PEï¿½A MISTURA - SAPUTO</td>
                                                         <td>20,00</td>
                                                         <td>29,90</td>
                                                         <td>598,00</td>

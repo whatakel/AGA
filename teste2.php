@@ -15,7 +15,7 @@
         $data = curl_exec($ch);
         $resultado = json_decode($data, true);
 
-        var_dump($resultado);
+        // var_dump($resultado);
 
 
         ?>

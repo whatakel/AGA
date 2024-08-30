@@ -50,3 +50,11 @@ function pedidosFixed(){
     }
 filtroIcone.addEventListener('click', pedidosFixed);
 window.addEventListener('scroll', pedidosFixed);
+
+// chamar conteúdo para iframe
+$('.box-pedido').on('click',function(){
+    // console.log($(this).attr('data-codigo'));
+    $('.background-right').css("display", "none");
+    $('#pedido_edicao').css("display", "inherit");
+    $('#pedido_edicao').attr('src','info-pedido.php?codigo='+$(this).attr('data-codigo'));
+ });

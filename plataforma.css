@@ -85,6 +85,9 @@ body{
     box-shadow: none;
     border:1px solid #00000055;
 }
+.input-pedido input{
+    text-transform:uppercase;
+}
 .form-group button{
     border:1px solid #00000055;
 }
@@ -406,7 +409,9 @@ body{
     border-top:none;
     border-bottom:none;
 }
-
+#pedido_edicao{
+    display:none;
+}
 @media screen and (max-width:991px){
     body{
         padding-left:0;

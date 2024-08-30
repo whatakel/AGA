@@ -84,7 +84,7 @@
             'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
             'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
             'Authorization: '.$token_tipo.' '.$token,
-            'Content-Type: application/json'
+            'Content-Type: application/json',
         ),
     ));
 
@@ -358,7 +358,8 @@
 </html>
 <script>
         $('.box-pedido').on('click',function(){
-           console.log($(this).attr('data-codigo'));
-           $('#pedido_edicao').attr('src','pedido.php?codigo='+$(this).attr('data-codigo') );
+        //    console.log($(this).attr('data-codigo'));
+           console.log($('#pedido_edicao').attr('src'))
+           $('#pedido_edicao').attr('src','pedido.php?codigo='+$(this).attr('data-codigo'));
         });
 </script>
