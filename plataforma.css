@@ -156,6 +156,11 @@ body{
 .busca-produto input{
     border-radius:5px;
 }
+.data-filtro{
+    font-size:14px;
+    font-weight: 500;
+    background:#e4e4e4
+}
 .coluna-pedidos{
     position:relative !important;
     height: 100%;
@@ -284,6 +289,18 @@ body{
 .pedido-action{  
     color:var(--preto);
     cursor:pointer;
+    transition:.2s ease;
+}
+.status-next{
+    background:#ffffff77;
+    color: var(--preto);
+    border-radius:3px;
+    cursor:pointer;
+    padding:3px;
+    transition:.2s ease;
+}
+.status-done:hover, .status-next:hover, .pedido-action:hover{
+    opacity: 0.7;
 }
 .acoes-principais{
     padding:5px 10px 5px 10px;

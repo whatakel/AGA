@@ -63,18 +63,25 @@ statusPedido.forEach(pedido =>{
         pedido.classList.add("fa-solid", "fa-circle-check");
         pedido.style.color = "#157347";
     }if(status === "Confirmado"){
-        pedido.classList.add("fa-solid", "fa-thumbs-up")
+        pedido.classList.add("fa-solid", "fa-thumbs-up");
+        pedido.style.color = "#F2CB05";
     }if(status === "Preparando"){
-        pedido.classList.add("fa-solid", "fa-boxes-packing")
+        pedido.classList.add("fa-solid", "fa-boxes-packing");
+        pedido.style.color = "#F2CB05";
     }if(status === "Faturando"){
         pedido.classList.add("fa-solid", "fa-cash-register");
+        pedido.style.color = "#F2CB05";
     }if(status === "Novo"){
         pedido.classList.add("fa-solid", "fa-plus");
     }if(status === "Entregando"){
         pedido.classList.add("fa-solid", "fa-truck");
+        pedido.style.color = "#F2CB05";
     }if(status === "Entregue"){
         pedido.classList.add("fa-solid", "fa-circle-check");
         pedido.style.color = "#157347";
+    }if(status === "Cancelado"){
+        pedido.classList.add("fa-solid", "fa-ban");
+        pedido.style.color = "tomato";
     }
     
 })

@@ -146,11 +146,13 @@ $qtd_pedidos = count($pedidos);
                                 <div class="input-group  input-status">
                                     <select class="form-control">
                                         <option value="" disabled hidden selected=""></option>
+                                        <option value="Novo">Novo</option>
                                         <option value="Confirmado">Confirmado</option>
                                         <option value="Preparando">Preparando</option>
                                         <option value="Faturando">Faturando</option>
                                         <option value="Entregando">Entregando</option>
                                         <option value="Entregue">Entregue</option>
+                                        <option value="Finalizado">Finalizado</option>
                                         <option value="Todos">Todos</option>
                                     </select>
                                 </div>
@@ -191,9 +193,9 @@ $qtd_pedidos = count($pedidos);
                                     <label for="incluido">Includo em</label>
                                     <div class="input-group date datepicker" data-date-autoclose="true"
                                         data-date-format="dd-mm-yyyy">
-                                        <input value="" class="form-control input-sm" placeholder="Início">
-                                        <button class="input-gp-btn fas fa-calendar-alt"></button></span>
-                                        <input value="" class="form-control input-sm" placeholder="Fim">
+                                        <input value="" class="form-control input-sm" placeholder="Início" type="date" onclick="showPicker()">
+                                        <button class="input-gp-btn data-filtro">Até</button>
+                                        <input value="" class="form-control input-sm" placeholder="Fim" type="date" onclick="showPicker()">
                                     </div>
                                 </div>
                             </div>
@@ -201,9 +203,9 @@ $qtd_pedidos = count($pedidos);
                                 <div class="form-group">
                                     <label for="faturado">Faturado em</label>
                                     <div class="input-group">
-                                        <input value="" class="form-control input-sm" placeholder="Início">
-                                        <button class="input-gp-btn fas fa-calendar-alt"></button> </span>
-                                        <input value="" class="form-control input-sm" placeholder="Fim">
+                                        <input value="" class="form-control input-sm" placeholder="Início" type="date" onclick="showPicker()">
+                                        <button class="input-gp-btn data-filtro">Até</button>
+                                        <input value="" class="form-control input-sm" placeholder="Fim" type="date" onclick="showPicker()">
                                     </div>
                                 </div>
                             </div>
