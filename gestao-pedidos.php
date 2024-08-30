@@ -114,14 +114,14 @@ $qtd_pedidos = count($pedidos);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGA - Gestão de Pedidos</title>
 
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="plataforma.css">
     <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
 </head>
@@ -209,7 +209,7 @@ $qtd_pedidos = count($pedidos);
                             </div>
                             <div class="input-mostrar filtro-mostrar form-group" id="dataTable1_length">
                                 <label>Mostrar
-                                    <select name="dataTable1_length" aria-controls="dataTable1" class="form-control input-sm">
+                                    <select name="data-lenght" aria-controls="dataTable1" class="form-control input-sm">
                                         <option value="15">15</option>
                                         <option value="25">25</option>
                                         <option value="50">50</option>
@@ -263,7 +263,7 @@ $qtd_pedidos = count($pedidos);
                                             <p class="data-pedido m-0 align-self-center">'.date('d/m/y', strtotime($pedido->pe_dthr)).'</p>
                                         </div>
                                         <!-- icone status faturando-->
-                                        <i class="icone-status fa-solid fa-truck" title="'.$pedido->pe_status.'"></i>
+                                        <i class="icone-status" title="'.$pedido->pe_status.'"></i>
                                     </div>
                                     <div class="pedido-numero-data d-flex flex-row align-items-center gap-2 my-1">
                                         <p class="loja-pedido-valor m-0 col-auto align-items-end">R$ '.number_format($pedido->pe_valor_total, 2, ',', '.').'</p>
@@ -343,8 +343,8 @@ $qtd_pedidos = count($pedidos);
             </div>
         </div>
     </div>
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

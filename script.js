@@ -51,6 +51,36 @@ function pedidosFixed(){
 filtroIcone.addEventListener('click', pedidosFixed);
 window.addEventListener('scroll', pedidosFixed);
 
+// atualização icones status
+
+var statusPedido = document.querySelectorAll(".icone-status")
+
+statusPedido.forEach(pedido =>{
+    var status = pedido.getAttribute("title");
+    if(status === "Recebido"){
+        pedido.classList.add("fa-solid", "fa-cart-flatbed");
+    }if(status === "Finalizado"){
+        pedido.classList.add("fa-solid", "fa-circle-check");
+        pedido.style.color = "#157347";
+    }if(status === "Confirmado"){
+        pedido.classList.add("fa-solid", "fa-thumbs-up")
+    }if(status === "Preparando"){
+        pedido.classList.add("fa-solid", "fa-boxes-packing")
+    }if(status === "Faturando"){
+        pedido.classList.add("fa-solid", "fa-cash-register");
+    }if(status === "Novo"){
+        pedido.classList.add("fa-solid", "fa-plus");
+    }if(status === "Entregando"){
+        pedido.classList.add("fa-solid", "fa-truck");
+    }if(status === "Entregue"){
+        pedido.classList.add("fa-solid", "fa-circle-check");
+        pedido.style.color = "#157347";
+    }
+    
+})
+
+
+
 // chamar conteúdo para iframe
 $('.box-pedido').on('click',function(){
     // console.log($(this).attr('data-codigo'));

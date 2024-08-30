@@ -125,7 +125,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="plataforma.css">
     <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
 </head>
@@ -211,7 +211,7 @@
                                 <div class="row">
                                     <div class="mb-3 col-8 col-lg-10">
                                         <label for="obs-dist">Observações do cliente</label>
-                                        <input type="text-area" class="input-pedido form-control" value="<?php echo $pedido->pe_status ?>" disabled></input>
+                                        <input type="text-area" class="input-pedido form-control" value="" disabled></input>
                                     </div>
                                     <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
                                         <label for="Total">Total R$</label>
@@ -262,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/jquery-3.7.1.min.js"></script>
 </body>
 </html>

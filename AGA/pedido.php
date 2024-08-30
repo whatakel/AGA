@@ -530,7 +530,7 @@
                                                             <tr>
                                                                 <td class="">'.$item->Descricao.'</td>
                                                                 <td><input class="form-control text-center" type="number" value="'.intval($item->Qtde).'"></td>
-                                                                <td>'.number_format($item->Unitario, 2, ',', '.').'</td>
+                                                                <td>'.number_format($item->Unitario, 2, ',', '.').'< /td>
                                                                 <td>'.number_format($item->Subtotal, 2, ',', '.').'</td>
                                                             </tr>                                                    
                                                     ';
