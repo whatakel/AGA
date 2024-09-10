@@ -218,24 +218,9 @@ body{
     border-bottom:var(--border-container);
 }
 .box-pedido:hover{
-    background:var(--gray-background);
+    background:#00000009;
     border:1px solid var(--azul);
     border-radius:3px;
-}
-.pedido-active{
-    position: relative;
-    background:#00000011;
-    border:1px solid var(--azul) !important;
-    border-radius:3px;
-}
-.pedido-active::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:5px;
-    background-color: var(--azul);
 }
 .box-pedido-status{
     display:flex;
@@ -292,7 +277,6 @@ body{
     transition:.2s ease;
 }
 .status-next{
-    background:#ffffff77;
     color: var(--preto);
     border-radius:3px;
     cursor:pointer;
@@ -428,6 +412,38 @@ body{
 }
 #pedido_edicao{
     display:none;
+}
+
+.modal-impressao{
+    background:#323639;
+}
+.modal-impressao .modal-body{
+    height:calc(100vh - 150px);
+    padding-left:0;
+    padding-right:0;
+}
+.modal-impressao .modal-footer{
+    border-color:#ffffff22;
+    padding:10px;
+}
+.pedido-active{
+    position: relative;
+    border:2px solid var(--azul) !important;
+    border-radius:3px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.45);
+    z-index: 99;
+    transform: .2s ease;
+}
+.pedido-active::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:5px;
+    background-color: var(--azul);
+    transform: .2s ease;
 }
 @media screen and (max-width:991px){
     body{

@@ -1,66 +1,5 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$curl = curl_init();
-
-/***** obtem o token de acesso *****/
-
-$erro           = false;
-$mensagem_erro  = '';
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/auth',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_SSL_VERIFYHOST => 0,
-    CURLOPT_SSL_VERIFYPEER => 0,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-                "usuario": "testeapi"
-                ,"senha": "54d12332466253425d"
-            }',
-    CURLOPT_HTTPHEADER => array(
-        'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
-        'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
-        'x-api-key: CnHSOyfrROIIQZsTzCIbmWBL8KAfl6tgFa0cO0ozO9YWTROBL0dAideAIJWLytdoC4p8LZgUUyQ4B6po4C3g7FCZc5t8xS830ImgmSN6TAeJ4EGgMuD5TASDcIMS04a',
-        'Content-Type: application/json'
-    ),
-));
-
-$response   = curl_exec($curl);
-$err        = curl_error($curl);
-$httpcode   = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-if ($err) {
-    $erro = true;
-    $mensagem_erro = 'Erro obtenção do token: ' . $httpcode . ' - ' . $err;
-} else {
-    if (
-        $httpcode != 200
-        && $httpcode != 201
-    ) {
-        $erro = true;
-        $mensagem_erro = 'Erro obtenção da token HTTP: ' . $httpcode;
-    }
-}
-
-if ($erro) {
-    echo $mensagem_erro;
-    exit;
-}
-
-$resposta = json_decode($response);
-
-//echo '<pre>'; print_r($resposta); echo '</pre>';
-
-$token        = $resposta->data->access_token;
-$token_tipo   = $resposta->data->token_type;
+include('_config.php');
 
 
 /***** obtem os dados dos pedidos *****/
@@ -69,7 +8,7 @@ $erro           = false;
 $mensagem_erro  = '';
 
 curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/pedidos/' . $_GET['codigo'],
+    CURLOPT_URL => $urlapi.'/pedidos/' . $_GET['codigo'],
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_SSL_VERIFYPEER => 0,
@@ -80,8 +19,8 @@ curl_setopt_array($curl, array(
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'GET',
     CURLOPT_HTTPHEADER => array(
-        'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
-        'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
+        'x-api-secret: '.$xapisecret,
+        'x-api-public: '.$xapipublic,
         'Authorization: ' . $token_tipo . ' ' . $token,
         'Content-Type: application/json'
     ),
@@ -160,8 +99,7 @@ curl_close($curl);
                 <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                     <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
                     <span class="m-0 p-0">/</span>
-                    <i class="pedido-action funcao-pedido fa-solid fa-print"
-                        title="Imprimir cópia do pedido"></i>
+                    <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido" data-bs-toggle="modal" data-bs-target="#imprime-pedido"></i>
                     <span class="m-0 p-0">/</span>
                     <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                 </div>
@@ -229,6 +167,7 @@ curl_close($curl);
                                             <tr>
                                                 <th class="col-12">Produto</th>
                                                 <th class="col tabela-produto px-3">Qtde.</th>
+                                                <th class="col tabela-produto px-3">UN</th>
                                                 <th class="col tabela-produto-valor">Valor</th>
                                                 <th class="col tabela-produto-subtotal">SubTotal</th>
                                             </tr>
@@ -240,6 +179,7 @@ curl_close($curl);
                                                             <tr>
                                                                 <td>' . $item->Descricao . '</td>
                                                                 <td>' . intval($item->Qtde) . '</td>
+                                                                <td>' . $item->Unidade . '</td>
                                                                 <td>' . number_format($item->Unitario, 2, ',', '.') . '</td>
                                                                 <td>' . number_format($item->Unitario, 2, ',', '.') . '</td>
                                                             </tr>
@@ -324,8 +264,25 @@ curl_close($curl);
             </div>
         </div>
     </div>
-    <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="plugins/jquery-3.7.1.min.js"></script>
+
+    <!-- modal impressão pedido -->
+
+    <div class="modal fade" id="imprime-pedido" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content modal-impressao">
+                <div class="modal-body">
+                    <iframe class="embed-responsive-item" src="impressao-pedido/imprime-copia-pedido.php" height="100%"></iframe>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary bg-danger border-0" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary bg-success border-0">Salvar PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="plugins/jquery-3.7.1.min.js" type="text/javascript"></script>
 </body>
 
 </html>

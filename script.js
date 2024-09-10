@@ -59,26 +59,22 @@ statusPedido.forEach(pedido =>{
     var status = pedido.getAttribute("title");
     if(status === "Recebido"){
         pedido.classList.add("fa-solid", "fa-cart-flatbed");
+        pedido.style.color = "#00000033"
     }if(status === "Finalizado"){
         pedido.classList.add("fa-solid", "fa-circle-check");
         pedido.style.color = "#157347";
     }if(status === "Confirmado"){
         pedido.classList.add("fa-solid", "fa-thumbs-up");
-        pedido.style.color = "#F2CB05";
     }if(status === "Preparando"){
         pedido.classList.add("fa-solid", "fa-boxes-packing");
-        pedido.style.color = "#F2CB05";
     }if(status === "Faturando"){
         pedido.classList.add("fa-solid", "fa-cash-register");
-        pedido.style.color = "#F2CB05";
     }if(status === "Novo"){
         pedido.classList.add("fa-solid", "fa-plus");
     }if(status === "Entregando"){
         pedido.classList.add("fa-solid", "fa-truck");
-        pedido.style.color = "#F2CB05";
     }if(status === "Entregue"){
         pedido.classList.add("fa-solid", "fa-circle-check");
-        pedido.style.color = "#157347";
     }if(status === "Cancelado"){
         pedido.classList.add("fa-solid", "fa-ban");
         pedido.style.color = "tomato";
@@ -86,6 +82,21 @@ statusPedido.forEach(pedido =>{
     
 })
 
+
+//ativar item lista pedido
+var listaPedidos = document.querySelectorAll('.box-pedido');
+
+function ativarPedido(event){
+    listaPedidos.forEach(pedido => {
+        pedido.classList.remove('pedido-active');
+    });
+
+    event.currentTarget.classList.add('pedido-active');
+}
+
+listaPedidos.forEach(pedido => {
+    pedido.addEventListener('click', ativarPedido);
+})
 
 
 // chamar conteúdo para iframe

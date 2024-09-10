@@ -1,116 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+include('_config.php');
+include('_requisicao-pedidos.php')
 
-$curl = curl_init();
 
-$erro = false;
-$mensagem_erro = '';
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/auth',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_SSL_VERIFYHOST => 0,
-    CURLOPT_SSL_VERIFYPEER => 0,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'POST',
-    CURLOPT_POSTFIELDS => '{
-                "usuario": "testeapi",
-                "senha": "54d12332466253425d"
-            }',
-    CURLOPT_HTTPHEADER => array(
-        'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
-        'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
-        'x-api-key: CnHSOyfrROIIQZsTzCIbmWBL8KAfl6tgFa0cO0ozO9YWTROBL0dAideAIJWLytdoC4p8LZgUUyQ4B6po4C3g7FCZc5t8xS830ImgmSN6TAeJ4EGgMuD5TASDcIMS04a',
-        'Content-Type: application/json'
-    ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-if ($err) {
-    $erro = true;
-    $mensagem_erro = 'Erro obtenção do token: ' . $httpcode . ' - ' . $err;
-} else {
-    if ($httpcode != 200 && $httpcode != 201) {
-        $erro = true;
-        $mensagem_erro = 'Erro obtenção da token HTTP: ' . $httpcode;
-    }
-}
-
-if ($erro) {
-    echo $mensagem_erro;
-    exit;
-}
-
-$resposta = json_decode($response);
-
-// echo '<pre>'; print_r($resposta); echo '</pre>';
-
-$token = $resposta->data->access_token;
-$token_tipo = $resposta->data->token_type;
-
-$erro = false;
-$mensagem_erro = '';
-
-curl_setopt_array($curl, array(
-    CURLOPT_URL => 'https://aga.totem.app.br/_custom/api/v1/pedidos/DataInicial>=2024-01-01',
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_SSL_VERIFYHOST => 0,
-    CURLOPT_SSL_VERIFYPEER => 0,
-    CURLOPT_ENCODING => '',
-    CURLOPT_MAXREDIRS => 10,
-    CURLOPT_TIMEOUT => 0,
-    CURLOPT_FOLLOWLOCATION => true,
-    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => 'GET',
-    CURLOPT_HTTPHEADER => array(
-        'x-api-secret: d4cfc2a8e0bbaa1234d89c64e85c59a5db63a8e7d4b1af8a6c4e87a8b4d95a64',
-        'x-api-public: BkwAK4oPuGiF7JRQFM97seT92RJ0o5lGGX83rBNHbHDid2cMmAmTOOyeSXGCKidhZjalTBK3PRLaUyIJP26KQxYEngDkJyEYmhnN5CYHkkeOS7BeJYbxUEalspAEx1ec',
-        'Authorization: ' . $token_tipo . ' ' . $token,
-        'Content-Type: application/json'
-    ),
-));
-
-$response = curl_exec($curl);
-$err      = curl_error($curl);
-$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-if ($err) {
-    echo $err.'<br>';
-    $erro = true;
-} else {
-    $resposta = json_decode($response);
-    if ( $httpcode != 200 && $httpcode != 201) {
-        echo "Erro".'<br>';
-        var_dump($resposta);
-        $erro = true;
-
-    } else {
-        $pedidos_abertos = [];
-
-        foreach($resposta->data as $dado) {
-            if($dado->pe_status !== "Finalizado" && $dado->pe_status !== "Cancelado"){
-                $pedidos_abertos[] = $dado;
-            }
-        }
-
-        $erro = false;
-    }
-}
-
-$pedidos = [];
-$pedidos = $pedidos_abertos;
-$qtd_pedidos = count($pedidos);
-
-// echo '<pre>'; print_r($pedidos); echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -341,7 +233,7 @@ $qtd_pedidos = count($pedidos);
                 <div class="background-right">
                     <img src="img/logo.svg" width="50%">
                 </div>
-                <iframe id="pedido_edicao" src="info-pedido.php" style="width:100%; height: calc(100vh - 85px);"></iframe>
+                <iframe id="pedido_edicao" style="width:100%; height: calc(100vh - 85px);"></iframe>
             </div>
         </div>
     </div>

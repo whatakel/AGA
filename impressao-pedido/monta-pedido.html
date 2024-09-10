@@ -1,0 +1,119 @@
+<table border="0" cellpadding="1" cellspacing="0" style="width:100%;">
+	<tbody>
+		<tr>
+			<td><img alt="" src="[var_global_url]/_custom/img/logo_empresa.png" style="width: 120px; height: 120px; float: left;" /></td>
+			<td style="text-align: center;"><font face="arial, helvetica, sans-serif"><span style="font-size: 16px;"><b>PROPOSTA COMERCIAL&nbsp;<br />
+			[Texto||emp_fantasia]</b></span><br />
+			<span style="font-size:14px;"><b>N&ordm; [Texto||codvenda] /&nbsp;[Texto||tipo]<br />
+			<span style="color:#FF0000;">[Data||dtpedido]</span></b></span></font></td>
+		</tr>
+	</tbody>
+</table>
+
+<div style="text-align: center;">&nbsp;</div>
+
+<table border="0" cellpadding="2" cellspacing="0" style="width:100%; border: 1px solid #ccc;">
+	<tbody>
+		<tr>
+			<td style="width: 20%;"><strong>Raz&atilde;o Social</strong></td>
+			<td style="width: 625px;">[Texto||cl_nome]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><strong>Fantasia</strong></td>
+			<td style="width: 625px;">[Texto||cl_fantasia]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><b>CNPJ / Insc.Est.</b></td>
+			<td style="width: 625px;">[Texto||cl_cnpj] /&nbsp;[Texto||cl_documento]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><b>Endere&ccedil;o</b></td>
+			<td style="width: 625px;">[Texto||cl_logradouro], [Texto||cl_numero] -&nbsp;[Texto||cl_complemento]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;">&nbsp;</td>
+			<td style="width: 625px;">[Texto||cl_bairro] - [Texto||cl_cidade] / [Texto||cl_estado] - CEP:&nbsp;&nbsp;[Texto||cl_cep]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><b>E-mail</b></td>
+			<td style="width: 625px;">[Texto||cl_email]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><strong>Telefones</strong></td>
+			<td style="width: 625px;">[Texto||cl_fone1] -&nbsp;[Texto||cl_celular]</td>
+		</tr>
+		<tr>
+			<td style="width: 154px;"><strong>Contato</strong></td>
+			<td style="width: 625px;">[Texto||contato]</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<strong>Itens</strong>
+
+<table border="1" cellpadding="2" cellspacing="0" id="Detalhes_01" style="width:100%;">
+	<thead>
+		<tr>
+			<th scope="col" style="width: 75px;">C&oacute;digo</th>
+			<th scope="col">Item</th>
+			<th scope="col" style="text-align: right; width: 75px;">Unit&aacute;rio</th>
+			<th scope="col" style="text-align: right; width: 75px;">Quantidade</th>
+			<th scope="col" style="text-align: right; width: 75px;">Caixas</th>
+			<th scope="col" style="text-align: right; width: 100px;">SubTotal</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="width: 75px;">[Texto||pr_codigo]</td>
+			<td>[Texto||pr_descricao]</td>
+			<td style="text-align: right; width: 75px;">[Moeda||valorunitario]</td>
+			<td style="text-align: right; width: 75px;">[Moeda||qtd]</td>
+			<td style="text-align: right; width: 75px;">[Texto||emb]</td>
+			<td style="text-align: right; width: 100px;">[Moeda||subtotal]</td>
+		</tr>
+		<tr>
+			<td colspan="5" style="text-align: right;">Itens</td>
+			<td style="text-align: right; background-color: rgb(238, 238, 238);"><strong>[Moeda||valortotal]</strong></td>
+		</tr>
+		<tr>
+			<td colspan="5" style="text-align: right;">Frete</td>
+			<td style="text-align: right; background-color: rgb(238, 238, 238);"><strong>[Moeda||valorfrete]</strong></td>
+		</tr>
+		<tr>
+			<td colspan="5" rowspan="1" style="text-align: right;">Desconto</td>
+			<td style="text-align: right; background-color: rgb(238, 238, 238);"><strong>[Moeda||desconto]</strong></td>
+		</tr>
+		<tr>
+			<td colspan="5" style="text-align: right;">Total</td>
+			<td style="text-align: right; background-color: rgb(238, 238, 238);"><strong>[Moeda||valortotalnota]</strong></td>
+		</tr>
+	</tbody>
+</table>
+&nbsp;
+
+<table border="0" cellpadding="1" cellspacing="0" style="width:800px;">
+	<tbody>
+		<tr>
+			<td style="width: 250px;"><strong>Previs&atilde;o de Entrega</strong></td>
+			<td>[Data||dtprevi] as [Texto||hrprevi]</td>
+		</tr>
+		<tr>
+			<td><strong>Forma de Pagamento</strong></td>
+			<td>[Texto||pg_forma]</td>
+		</tr>
+		<tr>
+			<td><strong>Observa&ccedil;&otilde;es</strong></td>
+			<td>[Texto||dadosadicionais]</td>
+		</tr>
+		<tr>
+			<td><strong>Impresso em</strong></td>
+			<td>[Data||dtimpresso]</td>
+		</tr>
+	</tbody>
+</table>
+
+[Texto||emp_nome]
+[Texto||emp_cnpj]
+[Texto||emp_logradouro], [Texto||emp_logradouro] [Texto||emp_numero] - [Texto||emp_complemento]
+[Texto||emp_bairro] - [Texto||emp_cidade] / [Texto||emp_estado] - CEP:  [Texto||emp_cep]
+ [Texto||emp_fone1] - [Texto||emp_email]
