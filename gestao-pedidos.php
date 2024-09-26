@@ -1,8 +1,6 @@
 <?php
 include('_config.php');
-include('_requisicao-pedidos.php')
-
-
+include('_lista-pedidos.php')
 ?>
 
 <!DOCTYPE html>

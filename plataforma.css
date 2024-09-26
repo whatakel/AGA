@@ -445,6 +445,9 @@ body{
     background-color: var(--azul);
     transform: .2s ease;
 }
+.string-pedido{
+    padding:0px 5px;
+}
 @media screen and (max-width:991px){
     body{
         padding-left:0;

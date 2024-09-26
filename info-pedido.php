@@ -75,7 +75,7 @@ curl_close($curl);
         <div class="titulo-pagina ctn-detalhes d-flex gap-2 gap-xl-3 p-2 d-flex flex-wrap justify-content-between">
             <div class="col-auto d-flex flex-row gap-1 ">
                 <div>
-                    <h6 class="px-2 m-0 d-flex">Pedido: <?php echo $pedido->codsite_lj_pedidos; ?></h6>
+                    <h6 class="px-2 m-0 d-flex">Pedido: <span class="string-pedido"><?php echo $pedido->codsite_lj_pedidos; ?></span></h6>
                     <p class="data-pedido px-2 m-0"><?php echo date('d/m/Y', strtotime($pedido->pe_dthr)); ?> &agrave;s <?php echo date('H:i', strtotime($pedido->pe_dthr)); ?></p>
                 </div>
             </div>
@@ -99,7 +99,7 @@ curl_close($curl);
                 <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                     <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
                     <span class="m-0 p-0">/</span>
-                    <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido" data-bs-toggle="modal" data-bs-target="#imprime-pedido"></i>
+                    <i class="pedido-action funcao-pedido fa-solid fa-print imprime-copia-pedido" title="Imprimir cópia do pedido" data-bs-toggle="modal" data-bs-target="#imprime-pedido"></i>
                     <span class="m-0 p-0">/</span>
                     <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                 </div>
@@ -271,21 +271,26 @@ curl_close($curl);
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content modal-impressao">
                 <div class="modal-body">
-                    <iframe class="embed-responsive-item" src="impressao-pedido/imprime-copia-pedido.php" height="100%"></iframe>
+                    <iframe class="embed-responsive-item iframe-impressao" height="100%"></iframe>
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary bg-danger border-0" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary bg-success border-0">Salvar PDF</button>
+                    <button type="button" class="btn btn-primary bg-success border-0 download-copia">Salvar PDF</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- <script src="script.js" type="text/javascript"></script> -->
     <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script src="plugins/jquery-3.7.1.min.js" type="text/javascript"></script>
 </body>
 
 </html>
 <script>
-
+    var urlImprime = $('.string-pedido').text();
+    $('.imprime-copia-pedido').on('click', function (){
+        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-copia-pedido.php?codigo='+(urlImprime)+'#toolbar=0')
+        $('.download-copia').attr('onclick', "window.location.href='impressao-pedido/download-copia.php?codigo=" + urlImprime + "'");
+    })
 </script>

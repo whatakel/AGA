@@ -1,5 +1,5 @@
     <?php 
-
+    include('_config.php');
     curl_setopt_array($curl, array(
         CURLOPT_URL => $urlapi.'/pedidos/DataInicial>=2024-01-01',
         CURLOPT_RETURNTRANSFER => true,
