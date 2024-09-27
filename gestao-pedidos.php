@@ -231,12 +231,22 @@ include('_lista-pedidos.php')
                 <div class="background-right">
                     <img src="img/logo.svg" width="50%">
                 </div>
-                <iframe id="pedido_edicao" style="width:100%; height: calc(100vh - 85px);"></iframe>
+                <iframe id="pedido_confirmar" style="width:100%; height: calc(100vh - 85px);"></iframe>
             </div>
         </div>
     </div>
     <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="plugins/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        
+        function changeIframe(){
+            // $('#pedido_confirmar').attr('src', 'google.com');
+            // console.log($("#pedido_confirmar"))
+        }
+
+
+    </script>
 </body>
 </html>

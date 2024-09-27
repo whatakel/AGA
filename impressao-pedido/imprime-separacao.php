@@ -153,7 +153,6 @@ $style = '
 include("../plugins/mpdf60/mpdf.php");
 $mpdf = new mPDF('utf-8v', 'A4', 0, '', 5, 5, 5, 5, 9, 9, 'P');
 $mpdf->SetTitle('AGA - Cópia do pedido - ' . $pedido->codsite_lj_pedidos);
-$mpdf->SetDisplayMode('fullpage');
 $mpdf->setAutoTopMargin = 'stretch';
 $mpdf->setAutoBottomMargin = 'stretch';
 

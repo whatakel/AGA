@@ -259,7 +259,7 @@ curl_close($curl);
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-primary salvar-prazo" onclick="parent.changeIframe()" data-bs-toggle="modal" data-bs-target="#imprime-pedido">Salvar</button>
                 </div>
             </div>
         </div>
@@ -268,14 +268,14 @@ curl_close($curl);
     <!-- modal impressão pedido -->
 
     <div class="modal fade" id="imprime-pedido" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content modal-impressao">
                 <div class="modal-body">
                     <iframe class="embed-responsive-item iframe-impressao" height="100%"></iframe>
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary bg-danger border-0" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary bg-success border-0 download-copia">Salvar PDF</button>
+                    <button type="button" class="btn btn-primary bg-success border-0" id="imprime-pedido">Imprimir</button>
                 </div>
             </div>
         </div>
@@ -290,7 +290,20 @@ curl_close($curl);
 <script>
     var urlImprime = $('.string-pedido').text();
     $('.imprime-copia-pedido').on('click', function (){
-        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-copia-pedido.php?codigo='+(urlImprime)+'#toolbar=0')
-        $('.download-copia').attr('onclick', "window.location.href='impressao-pedido/download-copia.php?codigo=" + urlImprime + "'");
+        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-copia-pedido.php?codigo='+(urlImprime)+'#toolbar=0');
+
+
+        // $('.download-copia').attr('onclick', "window.location.href='impressao-pedido/download-copia.php?codigo=" + urlImprime + "'");
+    });
+
+    $('.salvar-prazo').on('click', function () {
+        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-separacao.php?codigo='+(urlImprime)+'#toolbar=0');
+    })
+    $('#imprime-pedido').on('click', function (){
+        console.log('teste')
+        $('.iframe-impressao')[0].contentWindow.focus();
+        $('.iframe-impressao')[0].contentWindow.print();
+        // $('.iframe-impressao').on('load', function() {
+        // })
     })
 </script>
