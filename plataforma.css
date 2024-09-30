@@ -448,6 +448,12 @@ body{
 .string-pedido{
     padding:0px 5px;
 }
+.salvar-prazo{
+    background:var(--gray-background);
+    color:#00000022;
+    border:none;
+    pointer-events: none;
+}
 @media screen and (max-width:991px){
     body{
         padding-left:0;

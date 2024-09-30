@@ -83,7 +83,7 @@ curl_close($curl);
                 class="col-auto acoes-pedidos acoes-principais d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                 <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" style="color:var(--azul)" title="Confirmado"></i></a>
                 <span class="m-0 p-0">/</span>
-                <a href="" data-bs-toggle="modal" data-bs-target="#data-entrega"><i class="status-lista status-next fa-solid fa-cart-flatbed " title="Prazo de entrega"></i></a>
+                <a href="" data-bs-toggle="modal" data-bs-target="#data-entrega"><i class="status-lista status-next fa-solid fa-cart-flatbed" title="Prazo de entrega"></i></a>
                 <span class="m-0 p-0">/</span>
                 <a href=""><i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
                 <span class="m-0 p-0">/</span>
@@ -99,7 +99,7 @@ curl_close($curl);
                 <div class="acoes-pedidos col-auto d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
                     <i class="pedido-action funcao-pedido fa-solid fa-sheet-plastic" title="Protocolo" data-bs-toggle="modal" data-bs-target="#modal-protocolo"></i>
                     <span class="m-0 p-0">/</span>
-                    <i class="pedido-action funcao-pedido fa-solid fa-print imprime-copia-pedido" title="Imprimir cópia do pedido" data-bs-toggle="modal" data-bs-target="#imprime-pedido"></i>
+                    <i class="pedido-action funcao-pedido fa-solid fa-print" title="Imprimir cópia do pedido" data-bs-toggle="modal" data-bs-target="#imprime-pedido"></i>
                     <span class="m-0 p-0">/</span>
                     <a href=""><i class="pedido-action fa-solid fa-pen" title="Editar pedido"></i></a>
                 </div>
@@ -252,14 +252,14 @@ curl_close($curl);
                         <label for="Prazo-entrega" class="fw-bold">Selecione a data de entrega</label>
                         <div class="date datepicker" data-date-autoclose="true"
                             data-date-format="dd-mm-yyyy">
-                            <input class="form-control input-sm" type="date" name="data-entrega" id="data-entrega" onclick="showPicker()">
+                            <input class="form-control input-sm" id="input-prazo" type="date" name="data-entrega" id="data-entrega" onclick="showPicker()">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary salvar-prazo" onclick="parent.changeIframe()" data-bs-toggle="modal" data-bs-target="#imprime-pedido">Salvar</button>
+                    <button type="button" class="btn btn-primary salvar-prazo" onclick="parent.changeIframe()" id="imprime-pedido">Salvar</button>
                 </div>
             </div>
         </div>
@@ -267,11 +267,11 @@ curl_close($curl);
 
     <!-- modal impressão pedido -->
 
-    <div class="modal fade" id="imprime-pedido" tabindex="-1" aria-hidden="true">
+    <iframe class="embed-responsive-item iframe-impressao" height="100%" style="display:none"></iframe>
+    <!-- <div class="modal fade" id="imprime-pedido" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content modal-impressao">
                 <div class="modal-body">
-                    <iframe class="embed-responsive-item iframe-impressao" height="100%"></iframe>
                 </div>
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary bg-danger border-0" data-bs-dismiss="modal">Fechar</button>
@@ -279,7 +279,7 @@ curl_close($curl);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- <script src="script.js" type="text/javascript"></script> -->
     <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
@@ -288,22 +288,26 @@ curl_close($curl);
 
 </html>
 <script>
+    
     var urlImprime = $('.string-pedido').text();
-    $('.imprime-copia-pedido').on('click', function (){
-        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-copia-pedido.php?codigo='+(urlImprime)+'#toolbar=0');
 
+    $(document).ready(function(){
+        $('#input-prazo').on('change', function () {
 
-        // $('.download-copia').attr('onclick', "window.location.href='impressao-pedido/download-copia.php?codigo=" + urlImprime + "'");
-    });
-
-    $('.salvar-prazo').on('click', function () {
-        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-separacao.php?codigo='+(urlImprime)+'#toolbar=0');
+            if($(this).val()){
+                $('#imprime-pedido').removeClass("salvar-prazo");
+            }else{
+                $('#imprime-pedido').addClass("salvar-prazo");
+            }
+        })
     })
     $('#imprime-pedido').on('click', function (){
-        console.log('teste')
-        $('.iframe-impressao')[0].contentWindow.focus();
-        $('.iframe-impressao')[0].contentWindow.print();
-        // $('.iframe-impressao').on('load', function() {
-        // })
-    })
+        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-separacao.php?codigo='+(urlImprime)+'#toolbar=0');
+        setTimeout(() => {
+            $('.iframe-impressao')[0].contentWindow.focus();
+            $('.iframe-impressao')[0].contentWindow.print();
+        }, 1000);
+    });
+
+    
 </script>
