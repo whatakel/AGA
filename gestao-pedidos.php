@@ -241,9 +241,18 @@ include('_lista-pedidos.php')
 
     <script>
         
-        function changeIframe(){
-            // $('#pedido_confirmar').attr('src', 'google.com');
-            // console.log($("#pedido_confirmar"))
+        $('#pedido_confirmar').on('load', function () {
+            var iframeWindow = this.contentWindow;
+
+            $(iframeWindow).on('afterprint', function () {
+                console.log("teste")
+            })
+        })
+        function changeToSeparacao(){
+            // $(window).on('afterprint', function () {
+            //     $('#pedido_confirmar').attr('src','separacao-pedido.php');
+            //     console.log('deu boa gurizão')
+            // })
         }
 
 

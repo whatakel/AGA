@@ -259,29 +259,14 @@ curl_close($curl);
                 <div class="modal-footer d-flex justify-content-between">
                     <button type="button" class="btn btn-secondary"
                         data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary salvar-prazo" onclick="parent.changeIframe()" id="imprime-pedido">Salvar</button>
+                    <button type="button" class="btn btn-primary salvar-prazo" onclick="parent.changeToSeparacao()" id="imprime-pedido">Salvar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- modal impressão pedido -->
-
     <iframe class="embed-responsive-item iframe-impressao" height="100%" style="display:none"></iframe>
-    <!-- <div class="modal fade" id="imprime-pedido" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content modal-impressao">
-                <div class="modal-body">
-                </div>
-                <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-secondary bg-danger border-0" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-primary bg-success border-0" id="imprime-pedido">Imprimir</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <!-- <script src="script.js" type="text/javascript"></script> -->
     <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script src="plugins/jquery-3.7.1.min.js" type="text/javascript"></script>
 </body>
@@ -290,7 +275,7 @@ curl_close($curl);
 <script>
     
     var urlImprime = $('.string-pedido').text();
-
+    var teste = "teste";
     $(document).ready(function(){
         $('#input-prazo').on('change', function () {
 
@@ -309,5 +294,7 @@ curl_close($curl);
         }, 1000);
     });
 
-    
+    $(window).on('afterprint',function(){
+        console.log('uhum')
+    })
 </script>
