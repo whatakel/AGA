@@ -286,15 +286,13 @@ curl_close($curl);
             }
         })
     })
-    $('#imprime-pedido').on('click', function (){
-        $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-separacao.php?codigo='+(urlImprime)+'#toolbar=0');
-        setTimeout(() => {
-            $('.iframe-impressao')[0].contentWindow.focus();
-            $('.iframe-impressao')[0].contentWindow.print();
-        }, 1000);
-    });
+    // $('#imprime-pedido').on('click', function (){
+    //     $('.iframe-impressao').attr('src', 'impressao-pedido/imprime-separacao.php?codigo='+(urlImprime)+'#toolbar=0');
+    //     setTimeout(() => {
+    //         $('.iframe-impressao')[0].contentWindow.focus();
+    //         $('.iframe-impressao')[0].contentWindow.print();
+    //     }, 1000);
+    // });
 
-    $(window).on('afterprint',function(){
-        console.log('uhum')
-    })
+
 </script>

@@ -100,9 +100,19 @@ listaPedidos.forEach(pedido => {
 
 
 // chamar conteúdo para iframe
+var numPedido;
+
 $('.box-pedido').on('click',function(){
-    // console.log($(this).attr('data-codigo'));
+   numPedido = $(this).attr('data-codigo')
+    
     $('.background-right').css("display", "none");
     $('#pedido_confirmar').css("display", "inherit");
-    $('#pedido_confirmar').attr('src','confirmar-pedido.php?codigo='+$(this).attr('data-codigo'));
+    $('#pedido_confirmar').attr('src','confirmar-pedido.php?codigo=' + numPedido);
+    
  });
+
+// Altera iframe status
+
+ function changeToSeparacao(){
+    $('#pedido_confirmar').attr('src', 'separacao-pedido.php?codigo=' + numPedido);
+}
