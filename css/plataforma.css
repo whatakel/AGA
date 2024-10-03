@@ -270,20 +270,12 @@ body{
     color:var(--preto-claro);
     cursor: not-allowed;
 }
-.status-done,
 .pedido-action{  
     color:var(--preto);
     cursor:pointer;
     transition:.2s ease;
 }
-.status-next{
-    color: var(--preto);
-    border-radius:3px;
-    cursor:pointer;
-    padding:3px;
-    transition:.2s ease;
-}
-.status-done:hover, .status-next:hover, .pedido-action:hover{
+.pedido-action:hover{
     opacity: 0.7;
 }
 .acoes-principais{
@@ -453,6 +445,10 @@ body{
     color:#00000022;
     border:none;
     pointer-events: none;
+}
+.status-done{
+    color:var(--azul);
+    cursor:pointer;
 }
 @media screen and (max-width:991px){
     body{

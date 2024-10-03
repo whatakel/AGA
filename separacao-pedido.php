@@ -66,7 +66,8 @@ curl_close($curl);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="plataforma.css">
+    <link rel="stylesheet" href="css/plataforma.css">
+    <link rel="stylesheet" href="css/separacao-pedido.css">
     <link rel="stylesheet" href="plugins/fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="plugins/fontawesome-free-6.6.0-web/css/fontawesome.min.css">
 </head>
@@ -82,11 +83,11 @@ curl_close($curl);
             </div>
             <div
                 class="col-auto acoes-pedidos acoes-principais d-none d-lg-flex gap-2 gap-xl-3 align-items-center">
-                <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" style="color:var(--azul)" title="Confirmado"></i></a>
+                <a href=""><i class="status-lista status-done fa-solid fa-thumbs-up" title="Confirmado"></i></a>
                 <span class="m-0 p-0">/</span>
-                <a href="" data-bs-toggle="modal" data-bs-target="#data-entrega"><i class="status-lista status-next fa-solid fa-cart-flatbed" title="Prazo de entrega"></i></a>
+                <a href="" data-bs-toggle="modal" data-bs-target="#data-entrega"><i class="status-lista status-done fa-solid fa-cart-flatbed" title="Prazo de entrega"></i></a>
                 <span class="m-0 p-0">/</span>
-                <a href=""><i class="status-lista fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
+                <a href=""><i class="status-lista status-done fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
                 <span class="m-0 p-0">/</span>
                 <a href=""><i class="status-lista fa-solid fa-scale-balanced" title="Ajuste de peso"></i></a>
                 <span class="m-0 p-0">/</span>
@@ -176,8 +177,8 @@ curl_close($curl);
                                                             <th class="col-12">Produto</th>
                                                             <th class="col-auto d-none d-lg-table-cell">Tabela</th>
                                                             <th class="col-auto d-none d-lg-table-cell">Un.</th>
-                                                            <th class="col-auto d-none d-lg-table-cell">Preço</th>
-                                                            <th class="col-auto d-none d-lg-table-cell">Qtde.</th>
+                                                            <th class="col-auto px-3 bg-danger d-lg-table-cell">Preço</th>
+                                                            <th class="col-auto px-3 d-none d-lg-table-cell">Qtde.</th>
                                                             <th class="col-auto"></th>
                                                         </tr>
                                                     </thead>
@@ -186,8 +187,8 @@ curl_close($curl);
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td class="d-none d-lg-table-cell">21,20</td>
                                                             <td class="d-none d-lg-table-cell">PCT</td>
-                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
-                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
+                                                            <td class="d-none px-3 d-lg-table-cell"><input class="form-control text-center"></td>
+                                                            <td class="d-none px-3 d-lg-table-cell"><input class="form-control text-center"></td>
                                                             <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
                                                             </td>
                                                         </tr>

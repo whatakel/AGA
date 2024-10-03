@@ -12,7 +12,7 @@ include('_lista-pedidos.php')
     <title>AGA - Gestão de Pedidos</title>
 
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="plataforma.css">
+    <link rel="stylesheet" href="css/plataforma.css">
     <script src="https://kit.fontawesome.com/edb1b9d001.js" crossorigin="anonymous"></script>
 </head>
 
@@ -237,7 +237,7 @@ include('_lista-pedidos.php')
     </div>
     <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="plugins/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
 
