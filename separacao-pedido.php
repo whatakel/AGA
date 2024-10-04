@@ -89,7 +89,7 @@ curl_close($curl);
                 <span class="m-0 p-0">/</span>
                 <a href=""><i class="status-lista status-done fa-solid fa-boxes-packing" title="Imprimir folha de separação"></i></a>
                 <span class="m-0 p-0">/</span>
-                <a href=""><i class="status-lista fa-solid fa-scale-balanced" title="Ajuste de peso"></i></a>
+                <a href=""><i class="status-lista fa-solid status-done fa-scale-balanced" title="Ajuste de produtos"></i></a>
                 <span class="m-0 p-0">/</span>
                 <a href=""><i class="status-lista fa-solid fa-cash-register" title="Faturar + Enviar"></i></a>
                 <span class="m-0 p-0">/</span>
@@ -150,7 +150,18 @@ curl_close($curl);
                                     </div>
                                     <div class="mb-3 mb-lg-0 col-4 col-lg-2" style="margin:0 auto">
                                         <label for="Total">Total R$</label>
-                                        <input type="text" class="col-2 form-control">
+                                        <input type="text" class="col-2 form-control"
+                                        value="
+                                        <?php
+                                            $valorTotal = 0;
+                                            foreach ($pedido->itens as $item) {
+                                                $subTotal = number_format($item->Unitario) * number_format($item->Qtde);
+                                                $valorTotal += $subTotal;
+                                                
+                                            }
+                                            echo $valorTotal;
+                                        ?>
+                                        ">
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +188,7 @@ curl_close($curl);
                                                             <th class="col-12">Produto</th>
                                                             <th class="col-auto d-none d-lg-table-cell">Tabela</th>
                                                             <th class="col-auto d-none d-lg-table-cell">Un.</th>
-                                                            <th class="col-auto px-3 bg-danger d-lg-table-cell">Preço</th>
+                                                            <th class="col-auto px-3 d-lg-table-cell">Preço</th>
                                                             <th class="col-auto px-3 d-none d-lg-table-cell">Qtde.</th>
                                                             <th class="col-auto"></th>
                                                         </tr>
@@ -187,8 +198,8 @@ curl_close($curl);
                                                             <td>MUSSARELA PEÇA MISTURA - SAPUTO</td>
                                                             <td class="d-none d-lg-table-cell">21,20</td>
                                                             <td class="d-none d-lg-table-cell">PCT</td>
-                                                            <td class="d-none px-3 d-lg-table-cell"><input class="form-control text-center"></td>
-                                                            <td class="d-none px-3 d-lg-table-cell"><input class="form-control text-center"></td>
+                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
+                                                            <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
                                                             <td class=""><i class="fa-solid fa-plus icone-add"></i></i>
                                                             </td>
                                                         </tr>
@@ -213,20 +224,26 @@ curl_close($curl);
                                                 <thead>
                                                     <tr>
                                                         <th class="col-12">Produto</th>
-                                                        <th class="col tabela-produto px-3 px-lg-2">Qtde.</th>
-                                                        <th class="col tabela-produto-valor d-none d-lg-table-cell">Preço</th>
-                                                        <th class="col tabela-produto-subtotal">R$</th>
+                                                        <th class="col px-3 tabela-produto px-3">Qtde.</th>
+                                                        <th class="col px-3 tabela-produto-valor d-none d-lg-table-cell">Valor</th>
+                                                        <th class="col tabela-produto-subtotal">Subtotal</th>
                                                         <th class="col"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="tabela-produtos-edicao">
-                                                    <tr>
-                                                        <td class="">MUSSARELA PEÇA MISTURA - SAPUTO</td>
-                                                        <td><input class="form-control text-center" type="tel"></td>
-                                                        <td class="d-none d-lg-table-cell"><input class="form-control text-center"></td>
-                                                        <td>598,00</td>
-                                                        <td><i class="fa-solid fa-trash icone-trash"></i></td>
-                                                    </tr>
+                                                    <?php
+                                                        foreach($pedido->itens as $item){
+                                                            $subTotal = $item->Unitario * $item->Qtde;
+                                                            echo'
+                                                                <tr>
+                                                                    <td>'.$item->Descricao.'</td>
+                                                                    <td><input class="form-control text-center campo-qtde" type="tel" value="'. intval($item->Qtde) .'"></td>
+                                                                    <td class="d-none d-lg-table-cell"><input class="form-control text-center campo-moeda" value="'.number_format($item->Unitario, 2, ',','.').'"></td>            
+                                                                    <td class="campo-moeda">'.number_format($subTotal, 2, ',','.').'</td>
+                                                                    <td><i class="fa-solid fa-trash icone-trash"></i></td>
+                                                            ';
+                                                        }
+                                                    ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -316,9 +333,16 @@ curl_close($curl);
 
         <script src="plugins/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
         <script src="plugins/jquery-3.7.1.min.js" type="text/javascript"></script>
+        <script src="plugins/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
     </body>
-</html>
+</html> 
 
+<script>
+    
+    $('.campo-moeda').mask('000,00', {reverse: true});
+    $('.campo-qtde').mask('000');
+     
+</script>
 <!-- <script>
     var urlImprime = 2425
     $(document).ready(function() {

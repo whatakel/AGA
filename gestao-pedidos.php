@@ -203,7 +203,7 @@ include('_lista-pedidos.php')
                                 </a>
                             </div>
                             <div class="acoes-pedido-modal">
-                                <a href=""><i class="fa-solid fa-scale-balanced" title="Ajuste de peso"></i>
+                                <a href=""><i class="fa-solid fa-scale-balanced" title="Ajuste de produtos"></i>
                                     Ajuste de peso
                                 </a>
                             </div>
